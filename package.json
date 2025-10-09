@@ -30,9 +30,12 @@
     "vite-plugin-minify": "^1.5.2"
   },
   "dependencies": {
+    "@vercel/edge": "^1.2.2",
     "aos": "^2.3.4",
+    "basic-auth": "^2.0.1",
     "flatpickr": "^4.6.13",
     "fs": "^0.0.1-security",
-    "micromodal": "^0.4.10"
+    "micromodal": "^0.4.10",
+    "static-auth": "^2.1.2"
   }
 }
