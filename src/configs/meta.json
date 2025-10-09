@@ -8,7 +8,7 @@
     "description": "袖ノ浦港夏祭りの最新情報や開催概要は、こちらからご確認ください。",
     "ogp": {
       "type": "article",
-      "image": "hibari-konaweb.com/sodenoura/dist/images/fv01.jpg"
+      "image": "https://sodenoura.vercel.app/assets/images/fv01.jpg"
     },
     "twitter": {
       "card": "summary_large_image"
@@ -19,7 +19,7 @@
     "description": "美しいほど鮮やかに夜空を乱舞する花火大会。今年は3日間で計9,000発を打ち上げます。特別な体験をご希望の方に向けて有料観覧席をご用意しております。",
     "ogp": {
       "type": "article",
-      "image": "hibari-konaweb.com/sodenoura/dist/images/fv01.jpg"
+      "image": "https://sodenoura.vercel.app/assets/images/fv01.jpg"
     },
     "twitter": {
       "card": "summary_large_image"
@@ -30,7 +30,7 @@
     "description": "夏は多くの観光客で賑わう袖ノ浦海岸。広がる青い海と青空と砂浜が、リゾート気分を盛り上げます。その他、市内の観光名所をご紹介します。",
     "ogp": {
       "type": "article",
-      "image": "hibari-konaweb.com/sodenoura/dist/images/fv01.jpg"
+      "image": "https://sodenoura.vercel.app/assets/images/fv01.jpg"
     },
     "twitter": {
       "card": "summary_large_image"
@@ -41,7 +41,7 @@
     "description": "ページが見つかりませんでした",
     "ogp": {
       "type": "article",
-      "image": "hibari-konaweb.com/sodenoura/dist/images/fv01.jpg"
+      "image": "https://sodenoura.vercel.app/assets/images/fv01.jpg"
     },
     "twitter": {
       "card": "summary_large_image"
