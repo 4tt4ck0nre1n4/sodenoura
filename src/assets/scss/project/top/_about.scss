@@ -1,0 +1,296 @@
+@use "../../global" as g;
+
+// section "about"
+
+.about {
+  width: 100%;
+  height: 940px;
+  @include g.bg01-background_image;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  padding-top: 64px;
+  padding-bottom: 64px;
+
+  @include g.mq(xl) {
+    height: 840px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  @include g.mq(lg) {
+    height: 780px;
+    padding-top: 48px;
+  }
+
+  @include g.mq(ml) {
+    height: 1180px;
+    padding-top: 56px;
+  }
+
+  @include g.mq(md) {
+    width: 100%;
+    height: 100%;
+    min-height: 960px;
+    padding-top: 48px;
+  }
+
+  @include g.mq(sm) {
+    width: 100%;
+    height: 100%;
+    min-height: 270px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.about__inner {
+  width: 100%;
+  height: 84%;
+  text-align: right;
+  position: relative;
+  @include g.writing_mode;
+
+  @include g.mq(xl) {
+    height: 75%;
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+
+  @include g.mq(lg) {
+    height: 70%;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  @include g.mq(mx) {
+    height: 70%;
+    // padding-right: 16px;
+    // padding-left: 16px;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  @include g.mq(ml) {
+    height: 1020px;
+    text-align: left;
+    @include g.writing_mode-horizontal;
+  }
+
+  @include g.mq(md) {
+    height: 1000px;
+  }
+
+  @include g.mq(sl) {
+    height: 880px;
+  }
+
+  @include g.mq(sm) {
+    height: 100%;
+    min-height: 270px;
+    position: static;
+  }
+}
+
+.about__inner {
+  .about__text {
+    line-height: 2.4;
+    letter-spacing: 0.35em;
+    text-align: left;
+    white-space: nowrap;
+    -webkit-text-orientation: upright;
+    text-orientation: upright;
+
+    @include g.mq(xl) {
+      line-height: 2.2;
+      letter-spacing: 0.2em;
+    }
+
+    @include g.mq(lg) {
+      line-height: 2;
+      letter-spacing: 0.1em;
+    }
+
+    @include g.mq(ml) {
+      line-height: 2.2;
+    }
+
+    @include g.mq(md) {
+      line-height: 1.92;
+      letter-spacing: 0;
+    }
+
+    @include g.mq(sl) {
+      font-size: g.$f15;
+    }
+  }
+}
+
+.about__text:first-of-type {
+  position: absolute;
+  top: 15%;
+  right: 16%;
+
+  @include g.mq(xl) {
+    top: 12%;
+    right: 18%;
+  }
+
+  @include g.mq(lg) {
+    top: 15%;
+    right: 16%;
+  }
+
+  @include g.mq(ml) {
+    top: 13%;
+    right: auto;
+    left: 22%;
+    margin-right: 0;
+  }
+
+  @include g.mq(md) {
+    top: 13%;
+    left: 6%;
+  }
+
+  @include g.mq(sl) {
+    top: 13%;
+    left: 3%;
+  }
+
+  @include g.mq(sm) {
+    display: none;
+  }
+}
+
+.about__text:nth-of-type(2) {
+  position: absolute;
+  top: 15%;
+  right: 38%;
+
+  @include g.mq(xl) {
+    top: 12%;
+    right: 38%;
+  }
+
+  @include g.mq(lg) {
+    top: 15%;
+    right: 36%;
+  }
+
+  @include g.mq(ml) {
+    top: 39%;
+    right: auto;
+    left: 22%;
+  }
+
+  @include g.mq(md) {
+    top: 35%;
+    left: 6%;
+  }
+
+  @include g.mq(sl) {
+    top: 35%;
+    left: 3%;
+  }
+
+  @include g.mq(sm) {
+    display: none;
+  }
+}
+
+.about__text:nth-of-type(3) {
+  position: absolute;
+  top: 15%;
+  right: 64%;
+
+  @include g.mq(xl) {
+    top: 12%;
+    right: 62%;
+  }
+
+  @include g.mq(lg) {
+    top: 15%;
+    right: 60%;
+  }
+
+  @include g.mq(ml) {
+    top: 68%;
+    right: auto;
+    left: 22%;
+    margin-right: 0;
+  }
+
+  @include g.mq(md) {
+    top: 61%;
+    left: 6%;
+  }
+
+  @include g.mq(sl) {
+    top: 61%;
+    left: 3%;
+  }
+
+  @include g.mq(sm) {
+    display: none;
+  }
+}
+
+.about__text:nth-of-type(3) {
+  .sl-about__text_br {
+    display: none;
+
+    @include g.mq(sl) {
+      display: block;
+    }
+  }
+}
+
+.about__text:last-of-type {
+  font-size: g.$f20;
+  font-weight: 500;
+  position: absolute;
+  top: 56%;
+  right: 94%;
+
+  @include g.mq(xl) {
+    font-weight: 400;
+    top: 54%;
+    right: 90%;
+  }
+
+  @include g.mq(lg) {
+    top: 54%;
+    right: 88%;
+  }
+
+  @include g.mq(ml) {
+    top: 96%;
+    right: auto;
+    left: 62%;
+    margin-left: 4px;
+  }
+
+  @include g.mq(md) {
+    top: 93%;
+    right: auto;
+    left: 10%;
+    padding-left: 280px;
+  }
+
+  @include g.mq(sl) {
+    font-size: g.$f18;
+    top: 93%;
+    right: auto;
+    left: 3%;
+    padding-left: 240px;
+  }
+
+  @include g.mq(sm) {
+    display: none;
+  }
+}

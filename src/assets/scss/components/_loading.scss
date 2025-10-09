@@ -1,0 +1,69 @@
+#loading {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  text-align: center;
+  position: fixed;
+  z-index: 500;
+}
+
+#loading__logo {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+#loading__logo {
+  .loading__image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+}
+
+.js-loading__image {
+  animation-name: loadingAnime;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes loadingAnime {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#sodenoura__wrapper {
+  opacity: 0;
+}
+
+body.appear {
+  overflow: auto;
+  
+  #sodenoura__wrapper {
+    animation-name: appearAnime;
+    animation-duration: 1s;
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+}
+
+@keyframes appearAnime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

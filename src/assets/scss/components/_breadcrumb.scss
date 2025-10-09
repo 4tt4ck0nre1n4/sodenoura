@@ -1,0 +1,24 @@
+@use "../global" as g;
+
+// パンくず
+.bread-crumb {
+  padding-bottom: 96px;
+}
+
+.crumb-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .crumb-list_item:first-child {
+    margin-right: 8px;
+  }
+
+  .crumb-list_item:last-child {
+    margin-left: 6px;
+  }
+}
+
+.bread-crumb_color {
+  color: g.$mainColor;
+}

@@ -1,0 +1,50 @@
+{
+  "/index.html": {
+    "pageTitle": "袖ノ浦港夏祭り",
+    "description": "待ちに待った港夏祭りが4年ぶりに開催されます。心躍るひとときが、大切な思い出に変わる瞬間。伝統と新たな挑戦が交差する袖ノ浦市港夏祭りがあなたを驚きと笑顔の世界へと誘います。"
+  },
+  "/news/index.html": {
+    "pageTitle": "お知らせ - 袖ノ浦港夏祭り",
+    "description": "袖ノ浦港夏祭りの最新情報や開催概要は、こちらからご確認ください。",
+    "ogp": {
+      "type": "article",
+      "image": "hibari-konaweb.com/sodenoura/dist/images/fv01.jpg"
+    },
+    "twitter": {
+      "card": "summary_large_image"
+    }
+  },
+  "/hanabi/index.html": {
+    "pageTitle": "花火大会 - 袖ノ浦港夏祭り",
+    "description": "美しいほど鮮やかに夜空を乱舞する花火大会。今年は3日間で計9,000発を打ち上げます。特別な体験をご希望の方に向けて有料観覧席をご用意しております。",
+    "ogp": {
+      "type": "article",
+      "image": "hibari-konaweb.com/sodenoura/dist/images/fv01.jpg"
+    },
+    "twitter": {
+      "card": "summary_large_image"
+    }
+  },
+  "/kankou/index.html": {
+    "pageTitle": "観光名所",
+    "description": "夏は多くの観光客で賑わう袖ノ浦海岸。広がる青い海と青空と砂浜が、リゾート気分を盛り上げます。その他、市内の観光名所をご紹介します。",
+    "ogp": {
+      "type": "article",
+      "image": "hibari-konaweb.com/sodenoura/dist/images/fv01.jpg"
+    },
+    "twitter": {
+      "card": "summary_large_image"
+    }
+  },
+  "/404.html": {
+    "pageTitle": "404",
+    "description": "ページが見つかりませんでした",
+    "ogp": {
+      "type": "article",
+      "image": "hibari-konaweb.com/sodenoura/dist/images/fv01.jpg"
+    },
+    "twitter": {
+      "card": "summary_large_image"
+    }
+  }
+}

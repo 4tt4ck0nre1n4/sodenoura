@@ -1,0 +1,418 @@
+@use "../global" as g;
+
+// micromodal.js
+// モーダル
+
+.modal__overlay {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 300;
+}
+
+.modal__container {
+  $size: 550px;
+  width: min($size, 100%);
+  $size: 600px;
+  height: min($size, 100%);
+  background-color: g.$mainColor;
+  @include g.border-style;
+  position: relative;
+  padding-top: 25px;
+  padding-right: 60px;
+  padding-bottom: 90px;
+  padding-left: 60px;
+  margin: 0 auto;
+
+  @include g.mq(ml) {
+    $size: 550px;
+    width: min($size, 100%);
+    $size: 660px;
+    height: min($size, 100%);
+    padding-bottom: 40px;
+  }
+
+  @include g.mq(md) {
+    $size: 420px;
+    width: min($size, 100%);
+    $size: 660px;
+    height: min($size, 100%);
+    padding-top: 32px;
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+
+  @include g.mq(sm) {
+    $size: 340px;
+    width: min($size, 100%);
+    $size: 600px;
+    height: min($size, 100%);
+    padding-top: 24px;
+    padding-bottom: 48px;
+  }
+}
+
+.modal__header {
+  margin-bottom: 27px;
+
+  @include g.mq(ml) {
+    margin-bottom: 32px;
+  }
+
+  @include g.mq(sm) {
+    margin-bottom: 16px;
+  }
+}
+
+.modal__title {
+  font-size: g.$f20;
+  font-weight: 500;
+  color: g.$textColor;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.modal__close {
+  width: 18px;
+  height: 18px;
+  color: g.$textColor;
+  background: transparent;
+  border: 0;
+  position: absolute;
+  top: 20px;
+  right: 22px;
+}
+
+.modal__close:focus,
+.modal__close:hover {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.modal__header .modal__close::before {
+  width: 18px;
+  height: 18px;
+  content: "\2715";
+}
+
+.modal__content {
+  $size: 430px;
+  width: min($size, 100%);
+  border-top: g.$border_subColor 1px solid;
+
+  @include g.mq(lg) {
+    $size: 420px;
+    width: min($size, 100%);
+  }
+
+  @include g.mq(sm) {
+    $size: 320px;
+    width: min($size, 100%);
+  }
+}
+
+.modal__btn {
+  display: block;
+  font-size: g.$f16;
+  color: g.$textColor;
+  background-color: g.$mainColor;
+  white-space: nowrap;
+  @include g.border-style;
+  cursor: pointer;
+  -webkit-appearance: button;
+  text-transform: none;
+  overflow: visible;
+  will-change: transform;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  transition: transform .25s ease-out;
+  -webkit-transition: -webkit-transform .25s ease-out;
+  padding-top: 10px;
+  padding-right: 74px;
+  padding-bottom: 10px;
+  padding-left: 67px;
+  margin-top: 64px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include g.mq(ml) {
+    padding-right: 56px;
+    padding-left: 64px;
+    margin-top: 56px;
+  }
+
+  @include g.mq(md) {
+    margin-top: 48px;
+  }
+
+  @include g.mq(sm) {
+    padding-right: 64px;
+    margin-top: 32px;
+  }
+}
+
+.modal__btn:focus,
+.modal__btn:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.micromodal-slide {
+  display: none;
+}
+
+.micromodal-slide.is-open {
+  display: block;
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__overlay {
+  animation: mmfadeIn .6s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__container {
+  animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__overlay {
+  animation: mmfadeOut .8s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__container {
+  animation: mmslideOut .4s cubic-bezier(0, 0, .2, 1);
+}
+
+@keyframes mmfadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mmfadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes mmslideIn {
+  from {
+    transform: translateY(-25%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes mmslideOut {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-10%);
+  }
+}
+
+.micromodal-slide .modal__container,
+.micromodal-slide .modal__overlay {
+  will-change: transform;
+}
+
+.modal__formBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  .label {
+    display: inline-block;
+    font-size: g.$f16;
+    color: g.$textColor;
+  }
+}
+
+.label_name {
+  margin-top: 32px;
+
+  @include g.mq(sm) {
+    margin-top: 24px;
+  }
+}
+
+.modal__formBox input[type="text"] {
+  width: 429px;
+  height: 32px;
+  font-size: g.$f14;
+  background-color: g.$mainColor;
+  @include g.border-subStyle;
+  overflow: hidden;
+  padding-left: 10px;
+
+  @include g.mq(xl) {
+    width: 100%;
+  }
+}
+
+.input_name {
+  color: g.$textColor;
+  margin-top: 12px;
+
+  @include g.mq(ml) {
+    margin-top: 16px;
+  }
+}
+
+.label_email {
+  margin-top: 11px;
+
+  @include g.mq(ml) {
+    margin-top: 32px;
+  }
+
+  @include g.mq(md) {
+    margin-top: 24px;
+  }
+
+  @include g.mq(sm) {
+    margin-top: 16px;
+  }
+}
+
+.modal__formBox input[type="email"] {
+  width: 429px;
+  height: 32px;
+  font-size: g.$f14;
+  background-color: g.$mainColor;
+  @include g.border-subStyle;
+  overflow: hidden;
+  padding-left: 10px;
+
+  @include g.mq(xl) {
+    width: 100%;
+  }
+}
+
+.input_email {
+  color: g.$textColor;
+  margin-top: 12px;
+
+  @include g.mq(ml) {
+    margin-top: 16px;
+  }
+}
+
+.label_select {
+  margin-top: 11px;
+
+  @include g.mq(ml) {
+    margin-top: 32px;
+  }
+
+  @include g.mq(md) {
+    margin-top: 24px;
+  }
+
+  @include g.mq(sm) {
+    margin-top: 16px;
+  }
+}
+
+.label_select br {
+  display: none;
+
+  @include g.mq(md) {
+    display: block;
+  }
+}
+
+.label_fontSize {
+  @include g.mq(sm) {
+    font-size: g.$f14;
+  }
+}
+
+select {
+  width: 429px;
+  height: 32px;
+  font-size: g.$f14;
+  color: g.$text_subColor;
+  background-color: g.$mainColor;
+  @include g.border-subStyle;
+  overflow: hidden;
+  padding-left: 10px;
+  margin-top: 12px;
+
+  @include g.mq(ml) {
+    width: 100%;
+    margin-top: 16px;
+  }
+}
+
+select:focus,
+select:hover {
+  color: g.$textColor;
+}
+
+.label_date {
+  margin-top: 11px;
+
+  @include g.mq(ml) {
+    margin-top: 32px;
+  }
+
+  @include g.mq(md) {
+    margin-top: 24px;
+  }
+
+  @include g.mq(sm) {
+    margin-top: 16px;
+  }
+}
+
+.modal__formBox .flatpickr {
+  width: 429px;
+  height: 32px;
+  font-size: g.$f14;
+  color: g.$text_subColor;
+  background-color: g.$mainColor;
+  @include g.border-subStyle;
+  overflow: hidden;
+  padding-left: 10px;
+
+  @include g.mq(xl) {
+    width: 100%;
+  }
+}
+
+.input_date {
+  margin-top: 12px;
+
+  @include g.mq(ml) {
+    margin-top: 16px;
+  }
+}
+
+.flatpickr:focus,
+.flatpickr:hover {
+  color: g.$textColor;
+}

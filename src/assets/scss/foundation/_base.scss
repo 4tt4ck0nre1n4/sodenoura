@@ -1,0 +1,128 @@
+@use "../global" as g;
+
+// *,
+// *::before,
+// *::after {
+//   outline: green 1px solid;
+//   opacity: 1 !important;
+// }
+
+:root {
+  font-family: g.$f-f2;
+  font-size: g.$f16;
+  font-weight: g.$fw400;
+  line-height: 1.5;
+  color: g.$textColor;
+  background-color: g.$mainColor;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+a:hover {
+  text-decoration: underline;
+  opacity: 0.5;
+}
+
+.wrapper {
+  $size: 1780px;
+  width: 100%;
+  max-width: $size;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include g.mq(xx) {
+    $size: 1480px;
+    max-width: $size;
+  }
+
+  @include g.mq(xl) {
+    $size: 1280px;
+    max-width: $size;
+  }
+
+  @include g.mq(lg) {
+    $size: 1024px;
+    max-width: $size;
+  }
+
+  @include g.mq(mx) {
+    $size: 950px;
+    max-width: $size;
+  }
+
+  @include g.mq(ml) {
+    $size: 829px;
+    max-width: $size;
+  }
+
+  @include g.mq(mm) {
+    $size: 769px;
+    max-width: $size;
+  }
+
+  @include g.mq(md) {
+    $size: 640px;
+    max-width: $size;
+  }
+
+  @include g.mq(ms) {
+    $size: 550px;
+    max-width: $size;
+  }
+
+  @include g.mq(sl) {
+    $size: 480px;
+    max-width: $size;
+  }
+
+  @include g.mq(sm) {
+    $size: 350px;
+    max-width: $size;
+  }
+
+  @include g.mq(ss) {
+    $size: 320px;
+    max-width: $size;
+  }
+}
+
+// section "charm, access, footer" タイトル
+.section__titleInner {
+  text-align: center;
+
+  @include g.mq(sm) {
+    display: none;
+  }
+
+  .section__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  .section__heading {
+    font-family: g.$f-f1;
+    font-size: g.$f36;
+    margin-top: 12px;
+
+    @include g.mq(lg) {
+      font-size: g.$f28;
+    }
+
+    @include g.mq(sm) {
+      font-size: g.$f24;
+    }
+  }
+}

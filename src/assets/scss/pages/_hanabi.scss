@@ -1,0 +1,806 @@
+@use "../global" as g;
+
+// 下層ページ "花火大会"
+
+// section "hanabi-fv"
+.hanabi-fv {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.hanabi-fv__inner {
+  width: 100%;
+  height: 100%;
+  @include g.hanabi-background-image;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+
+  @include g.mq(md) {
+    background-position: 68%;
+  }
+
+  @include g.mq(sm) {
+    background-position: 64%;
+    position: fixed;
+    z-index: -1;
+  }
+}
+
+.sp-hanabi__text {
+  display: none;
+
+  @include g.mq(sm) {
+    width: 318px;
+    display: block;
+    font-size: g.$f14;
+    font-weight: 400;
+    line-height: 1.6;
+    text-align: justify;
+    color: g.$mainColor;
+    position: absolute;
+    top: 52%;
+    left: 12%;
+    z-index: 10;
+  }
+
+  @include g.mq(ss) {
+    width: 300px;
+    display: block;
+    font-size: g.$f12;
+    font-weight: 400;
+    line-height: 1.6;
+    color: g.$mainColor;
+    position: absolute;
+    top: 52%;
+    left: 4%;
+    z-index: 10;
+  }
+}
+
+.sp-hanabi__text {
+  br {
+    display: block;
+
+    @include g.mq(sm) {
+      display: none;
+    }
+  }
+}
+
+// section "hanabi"
+.hanabi {
+  height: 100%;
+  @include g.hanabi_bg-background-image;
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat;
+  padding-top: 32px;
+  padding-bottom: 160px;
+
+  @include g.mq(lg) {
+    padding-top: 48px;
+    padding-bottom: 72px;
+  }
+
+  @include g.mq(sm) {
+    width: 100%;
+    height: 100%;
+    background-color: g.$mainColor;
+    position: relative;
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
+
+.hanabi__wrapper {
+  $size: 1180px;
+  width: 100%;
+  max-width: $size;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include g.mq(lg) {
+    $size: 1024px;
+    max-width: $size;
+  }
+
+  @include g.mq(mx) {
+    $size: 950px;
+    max-width: $size;
+  }
+
+  @include g.mq(ml) {
+    $size: 829px;
+    max-width: $size;
+  }
+
+  @include g.mq(mm) {
+    $size: 769px;
+    max-width: $size;
+  }
+
+  @include g.mq(md) {
+    $size: 640px;
+    max-width: $size;
+  }
+
+  @include g.mq(ms) {
+    $size: 550px;
+    max-width: $size;
+  }
+
+  @include g.mq(sl) {
+    $size: 480px;
+    max-width: $size;
+  }
+
+  @include g.mq(sm) {
+    $size: 350px;
+    max-width: $size;
+  }
+
+  @include g.mq(ss) {
+    $size: 320px;
+    max-width: $size;
+  }
+}
+
+// 序文
+.hanabi__text_foreword {
+  font-size: g.$f18;
+  line-height: 2.2;
+  letter-spacing: 0.2em;
+  text-align: center;
+  background-color: g.$mainColor;
+  border: g.$border_color 1px solid;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  margin-top: 64px;
+  margin-bottom: 120px;
+
+  @include g.mq(lg) {
+    margin-top: 80px;
+    margin-bottom: 120px;
+  }
+
+  @include g.mq(ml) {
+    font-size: g.$f16;
+    text-align: justify;
+    padding-right: 64px;
+    padding-left: 64px;
+    margin-top: 64px;
+    margin-bottom: 64px;
+  }
+
+  @include g.mq(md) {
+    padding-right: 24px;
+    padding-left: 24px;
+    margin-top: 56px;
+    margin-bottom: 56px;
+  }
+
+  @include g.mq(sm) {
+    width: 100%;
+    font-size: g.$f15;
+    line-height: 2;
+    letter-spacing: 0.04em;
+    padding-right: 16px;
+    padding-left: 16px;
+    margin-top: 48px;
+    margin-bottom: 48px;
+  }
+}
+
+.hanabi__text_foreword {
+  br {
+    display: block;
+
+    @include g.mq(ml) {
+      display: none;
+    }
+  }
+}
+
+// 花火大会
+.hanabi__inner {
+  height: 376px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 0;
+
+  @include g.mq(ml) {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.hanabi__inner_secondary {
+  height: 376px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 0;
+  margin-top: 136px;
+  margin-bottom: 128px;
+
+
+  @include g.mq(lg) {
+    margin-top: 128px;
+  }
+
+  @include g.mq(ml) {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 64px;
+    margin-bottom: 64px;
+  }
+
+  @include g.mq(md) {
+    margin-top: 56px;
+    margin-bottom: 56px;
+  }
+
+  @include g.mq(sm) {
+    margin-top: 48px;
+    margin-bottom: 48px;
+  }
+}
+
+.hanabi__textInner {
+  width: 813px;
+  height: 336px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: g.$mainColor;
+  text-align: justify;
+  z-index: 5;
+
+  @include g.mq(lg) {
+    width: 80%;
+    height: 100%;
+  }
+
+  @include g.mq(ml) {
+    width: 100%;
+  }
+
+  @include g.mq(md) {
+    letter-spacing: 0.06em;
+  }
+}
+
+.hanabi__inner {
+  .hanabi__textInner {
+    padding-top: 56px;
+    padding-right: 32px;
+    padding-bottom: 56px;
+    padding-left: 208px;
+
+    @include g.mq(lg) {
+      padding-top: 48px;
+      padding-bottom: 48px;
+      padding-left: 248px;
+    }
+
+    @include g.mq(ml) {
+      padding-top: 64px;
+      padding-bottom: 24px;
+      padding-left: 136px;
+    }
+
+    @include g.mq(md) {
+
+      padding-top: 48px;
+      padding-right: 24px;
+      padding-bottom: 32px;
+      padding-left: 24px;
+    }
+
+    @include g.mq(sm) {
+      letter-spacing: 0.04em;
+      padding-top: 32px;
+      padding-right: 24px;
+      padding-bottom: 32px;
+      padding-left: 24px;
+    }
+  }
+}
+
+// second
+.hanabi__inner_secondary {
+  .hanabi__textInner {
+    padding-top: 56px;
+    padding-bottom: 56px;
+    padding-left: 56px;
+
+    @include g.mq(lg) {
+      padding-top: 64px;
+      padding-bottom: 48px;
+      padding-left: 24px;
+    }
+
+    @include g.mq(ml) {
+      padding-top: 64px;
+      padding-bottom: 24px;
+      padding-left: 136px;
+    }
+
+    @include g.mq(md) {
+      padding-top: 48px;
+      padding-right: 24px;
+      padding-bottom: 32px;
+      padding-left: 24px;
+    }
+
+    @include g.mq(sm) {
+      padding-top: 32px;
+      padding-right: 24px;
+      padding-bottom: 32px;
+      padding-left: 24px;
+    }
+  }
+}
+
+.hanabi__text {
+  line-height: 2.2;
+  margin-top: 48px;
+
+  @include g.mq(ml) {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+
+  @include g.mq(sm) {
+    font-size: g.$f15;
+    line-height: 2;
+  }
+}
+
+.hanabi__text {
+  br {
+    display: block;
+
+    @include g.mq(md) {
+      display: none;
+    }
+  }
+}
+
+.hanabi__text_secondary {
+  line-height: 2.2;
+  margin-top: 48px;
+
+  @include g.mq(ml) {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+
+  @include g.mq(sm) {
+    font-size: g.$f15;
+    line-height: 2;
+  }
+}
+
+.hanabi__text_secondary {
+  br {
+    display: block;
+
+    @include g.mq(sm) {
+      display: none;
+    }
+  }
+}
+
+.hanabi__inner {
+  .hanabi__imageInner {
+    aspect-ratio: 3 / 2;
+    z-index: 10;
+    margin-top: -57px;
+    margin-right: -158px;
+
+    @include g.mq(lg) {
+      margin-top: -57px;
+      margin-right: -216px;
+    }
+
+    @include g.mq(ml) {
+      margin-top: 0;
+      margin-right: 0;
+      margin-bottom: -32px;
+    }
+
+    @include g.mq(md) {
+      margin-bottom: 0;
+    }
+
+    @include g.mq(sm) {
+      margin-top: 0;
+      margin-right: 0;
+    }
+  }
+}
+
+.hanabi__inner_secondary {
+  .hanabi__imageInner {
+    aspect-ratio: 3 / 2;
+    z-index: 10;
+    margin-top: -57px;
+    margin-left: -158px;
+
+    @include g.mq(lg) {
+      margin-top: -57px;
+      margin-left: -216px;
+    }
+
+    @include g.mq(ml) {
+      order: -1;
+      margin-top: 0;
+      margin-left: 0;
+      margin-bottom: -32px;
+    }
+
+    @include g.mq(md) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.hanabi__image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+// section "hanabi-table" 花火大会の概要
+.hanabi-table {
+  width: 100%;
+  height: 820px;
+  padding-top: 80px;
+  margin-bottom: 80px;
+
+  @include g.mq(lg) {
+    height: 1160px;
+    padding-top: 72px;
+    margin-bottom: 72px;
+  }
+
+  @include g.mq(ml) {
+    height: 1000px;
+    margin-bottom: 88px;
+  }
+
+  @include g.mq(md) {
+    height: 1140px;
+    margin-bottom: 72px;
+  }
+
+  @include g.mq(sm) {
+    height: 1140px;
+    background-color: g.$mainColor;
+    z-index: 0;
+    padding-top: 56px;
+    margin-bottom: 0;
+  }
+}
+
+.hanabi-table__inner {
+  border-top: g.$border_subColor 1px solid;
+  border-bottom: g.$border_subColor 1px solid;
+  padding-top: 40px;
+  padding-right: 160px;
+  padding-bottom: 72px;
+  padding-left: 160px;
+  margin-top: 32px;
+
+  @include g.mq(lg) {
+    padding-top: 48px;
+    padding-right: 0;
+    padding-bottom: 72px;
+    padding-left: 0;
+  }
+
+  @include g.mq(ml) {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  @include g.mq(md) {
+    padding-top: 48px;
+    padding-right: 32px;
+    padding-bottom: 48px;
+    padding-left: 32px;
+  }
+
+  @include g.mq(sm) {
+    padding-top: 48px;
+    padding-right: 32px;
+    padding-bottom: 48px;
+    padding-left: 32px;
+  }
+}
+
+.hanabi-table__contents {
+  width: 100%;
+  height: 100%;
+  margin-top: 24px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include g.mq(lg) {
+    padding-right: 240px;
+    padding-left: 240px;
+    margin-top: 0;
+  }
+
+  @include g.mq(ml) {
+    padding-right: 120px;
+    padding-left: 120px;
+  }
+
+  @include g.mq(ml) {
+    padding-right: 48px;
+    padding-left: 48px;
+  }
+
+  @include g.mq(sm) {
+    max-width: 318px;
+    height: 32px;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
+
+.hanabi-table__caption {
+  font-family: g.$f-f1;
+  font-size: g.$f26;
+  font-weight: 500;
+  margin-bottom: 48px;
+
+  @include g.mq(sm) {
+    font-size: g.$f24;
+    margin-bottom: 32px;
+  }
+}
+
+.hanabi-table__head {
+  height: 58px;
+  font-family: g.$f-f2;
+  font-size: g.$f18;
+  font-weight: 500;
+  text-align: left;
+  white-space: nowrap;
+  border-top: g.$border_subColor 1px solid;
+  padding-top: 14.5px;
+  padding-bottom: 15.5px;
+
+  @include g.mq(lg) {
+    width: 100%;
+    display: block;
+    text-align: center;
+    white-space: normal;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+.hanabi-table__data {
+  width: 648px;
+  font-family: g.$f-f2;
+  font-size: g.$f16;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-align: left;
+  white-space: nowrap;
+  border-top: g.$border_subColor 1px solid;
+  padding-top: 14.5px;
+  padding-bottom: 15.5px;
+
+  @include g.mq(lg) {
+    width: 100%;
+    display: block;
+    white-space: normal;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: 100px;
+  }
+
+  @include g.mq(md) {
+    padding-left: 0;
+  }
+
+  @include g.mq(sm) {
+    font-size: g.$f14;
+    line-height: 1.8;
+    text-align: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+.hanabi-table__data {
+  br {
+    display: block;
+
+    @include g.mq(ml) {
+      display: none;
+    }
+
+    @include g.mq(md) {
+      display: block;
+    }
+  }
+}
+
+// tr:nth-child(3)>.hanabi-table__head,
+// .hanabi-table__data {
+//   @include g.mq(lg) {
+//     border-top: none;
+//   }
+
+// }
+
+// tr:nth-child(4)>.hanabi-table__head,
+// .hanabi-table__data {
+//   border-top: none;
+// }
+
+// tr:nth-child(4)>* {
+//   border-top: none;
+// }
+
+.hanabi-table__row:last-child>* {
+  border-bottom: g.$border_subColor 1px solid;
+  padding-right: 24px;
+
+  @include g.mq(ml) {
+    padding-right: 32px;
+  }
+
+  @include g.mq(md) {
+    padding-right: 0;
+  }
+
+  @include g.mq(sm) {
+    padding-right: 8px;
+  }
+}
+
+// tr:last-child>.hanabi-table__head {
+//   border-bottom: none;
+// }
+
+// .hanabi-table__data:last-of-type {
+//   text-align: left;
+// }
+
+// section "hanabi-charm" 夏祭りの魅力
+.hanabi-charm {
+  display: none;
+
+  @include g.mq(sm) {
+    width: 100vw;
+    height: 100%;
+    display: block;
+    @include g.bg02-background_image;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
+
+.hanabi-charm__wrapper {
+  @include g.mq(sm) {
+    $size: 350px;
+    width: 100%;
+    max-width: $size;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @include g.mq(ss) {
+    $size: 320px;
+    width: 100%;
+    max-width: $size;
+  }
+}
+
+.hanabi-charm__inner {
+  @include g.mq(sm) {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 48px;
+  }
+}
+
+// カード
+.hanabi-charm__inner {
+  .hanabi-charm__card {
+    width: 100%;
+    height: 280px;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+  }
+}
+
+// カード テキスト部分
+.hanabi-charm__card {
+  .hanabi-card__textInner {
+    @include g.mq(sm) {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      text-align: justify;
+      padding-right: 32px;
+      padding-left: 32px;
+      margin-top: 48px;
+      margin-bottom: 48px;
+    }
+  }
+}
+
+// カード footer テキスト
+.hanabi-card__text {
+  @include g.mq(sm) {
+    height: 100%;
+    font-size: g.$f15;
+    line-height: 2;
+    letter-spacing: 0.1em;
+    margin-top: 32px;
+  }
+}
+
+// カード image
+.hanabi-card__imageInner {
+  @include g.mq(sm) {
+    width: 100%;
+    height: 100%;
+    order: -1;
+    position: relative;
+  }
+}
+
+.hanabi-card__thumbnail {
+  aspect-ratio: 331 / 209;
+
+  .hanabi-card__image {
+    @include g.mq(sm) {
+      width: 100vw;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+    }
+  }
+}

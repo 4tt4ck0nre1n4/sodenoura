@@ -1,0 +1,282 @@
+@use "../../global" as g;
+
+// section "table"
+.table {
+  width: 100%;
+  height: 100%;
+  height: 640px;
+  background-color: g.$mainColor;
+  padding-top: 80px;
+  margin-bottom: 80px;
+
+  @include g.mq(lg) {
+    height: 800px;
+    margin-bottom: 72px;
+  }
+
+  @include g.mq(ml) {
+    height: 770px;
+    padding-top: 64px;
+    margin-bottom: 64px;
+  }
+
+  @include g.mq(md) {
+    height: 800px;
+    background-color: g.$mainColor;
+    position: relative;
+    padding-top: 56px;
+    margin-bottom: 0;
+  }
+
+  @include g.mq(sm) {
+    width: 100vw;
+    height: 100%;
+    min-height: 270px;
+    @include g.bg05-background_image;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 0;
+  }
+}
+
+.table__wrapper {
+  $size: 1180px;
+  width: 100%;
+  max-width: $size;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include g.mq(lg) {
+    $size: 1024px;
+    max-width: $size;
+  }
+
+  @include g.mq(mx) {
+    $size: 950px;
+    max-width: $size;
+  }
+
+  @include g.mq(ml) {
+    $size: 829px;
+    max-width: $size;
+  }
+
+  @include g.mq(mm) {
+    $size: 769px;
+    max-width: $size;
+  }
+
+  @include g.mq(md) {
+    $size: 640px;
+    max-width: $size;
+  }
+
+  @include g.mq(ms) {
+    $size: 550px;
+    max-width: $size;
+  }
+
+  @include g.mq(sl) {
+    $size: 480px;
+    max-width: $size;
+  }
+
+  @include g.mq(sm) {
+    $size: 350px;
+    max-width: $size;
+  }
+
+  @include g.mq(ss) {
+    $size: 320px;
+    max-width: $size;
+  }
+}
+
+.table__inner {
+  border-top: g.$border_subColor 1px solid;
+  border-bottom: g.$border_subColor 1px solid;
+  padding-top: 40px;
+  padding-right: 160px;
+  padding-bottom: 72px;
+  padding-left: 160px;
+  margin-top: 32px;
+
+  @include g.mq(lg) {
+    padding-top: 48px;
+    padding-right: 0;
+    padding-bottom: 72px;
+    padding-left: 0;
+  }
+
+  @include g.mq(ml) {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  @include g.mq(md) {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  @include g.mq(sm) {
+    display: none;
+  }
+}
+
+.table__contents {
+  width: 100%;
+  height: 100%;
+  margin-top: 24px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include g.mq(lg) {
+    padding-right: 240px;
+    padding-left: 240px;
+    margin-top: 0;
+  }
+
+  @include g.mq(ml) {
+    padding-right: 120px;
+    padding-left: 120px;
+  }
+
+  @include g.mq(md) {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  @include g.mq(sm) {
+    display: none;
+  }
+}
+
+.table__caption {
+  @include g.visually-hidden;
+}
+
+.table__head {
+  height: 58px;
+  font-size: g.$f18;
+  font-weight: 500;
+  text-align: left;
+  white-space: nowrap;
+  border-top: g.$border_subColor 1px solid;
+  padding-top: 14.5px;
+  padding-bottom: 15.5px;
+
+  @include g.mq(lg) {
+    width: 100%;
+    display: block;
+    text-align: center;
+    white-space: normal;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  @include g.mq(ml) {
+    padding-left: 0;
+  }
+}
+
+.table__data {
+  width: 648px;
+  font-size: g.$f16;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-align: left;
+  white-space: nowrap;
+  border-top: g.$border_subColor 1px solid;
+  padding-top: 14.5px;
+  padding-bottom: 15.5px;
+
+  @include g.mq(lg) {
+    width: 100%;
+    display: block;
+    white-space: normal;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: 100px;
+  }
+
+  @include g.mq(ml) {
+    padding-left: 50px;
+  }
+
+  @include g.mq(md) {
+    padding-left: 0;
+  }
+
+  @include g.mq(sm) {
+    font-size: g.$f14;
+    line-height: 1.8;
+    white-space: normal;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+.table__data {
+  br {
+    display: block;
+
+    @include g.mq(ml) {
+      display: none;
+    }
+
+    @include g.mq(md) {
+      display: block;
+    }
+  }
+}
+
+.table__row:nth-child(3)>* {
+  // border-top: none;
+}
+
+.table__row:last-child>* {
+  padding-right: 24px;
+  border-bottom: g.$border_subColor 1px solid;
+
+  @include g.mq(ml) {
+    padding-right: 32px;
+  }
+
+  @include g.mq(md) {
+    padding-right: 0;
+  }
+
+  @include g.mq(sm) {
+    padding-right: 8px;
+  }
+}
+
+.table__head_secondary {
+  border-bottom: g.$border_subColor 1px solid;
+}
+
+// レスポンシブ smサイズ
+.sp-table__linkBox {
+  display: none;
+
+  @include g.mq(sm) {
+    width: 200px;
+    height: 64px;
+    display: block;
+    font-size: g.$f20;
+    font-weight: 500;
+    text-align: center;
+    color: g.$mainColor;
+    background-color: transparent;
+    border: g.$mainColor 6px double;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateY(-60%) translateX(-50%);
+    -webkit-transform: translateY(-60%) translateX(-50%);
+    z-index: 50;
+    padding-top: 12px;
+    padding-bottom: 16px;
+  }
+}

@@ -1,0 +1,298 @@
+@use "../../global" as g;
+
+// section "charm"
+
+.charm {
+  width: 100%;
+  height: 840px;
+  @include g.bg02-background_image;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 64px;
+  padding-bottom: 88px;
+
+  @include g.mq(xl) {
+    background-position: 74%;
+  }
+
+  @include g.mq(xl) {
+    background-position: 74%;
+  }
+
+  @include g.mq(lg) {
+    height: 1400px;
+    background-position: 12%;
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  @include g.mq(ml) {
+    height: 1240px;
+    background-position: 16%;
+  }
+
+  @include g.mq(md) {
+    display: block;
+    height: 100%;
+    position: relative;
+    z-index: 0;
+    background-position: center;
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  @include g.mq(sm) {
+    width: 80vw;
+    background-image: none;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.charm__inner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  margin-top: 56px;
+
+  @include g.mq(xl) {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  @include g.mq(lg) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  @include g.mq(md) {
+    margin-top: 48px;
+  }
+
+  @include g.mq(sm) {
+    width: 100vw;
+    // width: 100%;
+    height: 100%;
+    margin-top: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  // カード
+  .charm__card {
+    width: calc(33.3% - (72px * 2) / 3);
+    height: 533px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+
+    @include g.mq(xl) {
+      width: calc(33.3% - (48px * 2) / 3);
+    }
+
+    @include g.mq(lg) {
+      width: 100%;
+      height: 330px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 56px;
+    }
+
+    @include g.mq(ml) {
+      height: 280px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @include g.mq(md) {
+      width: 100%;
+      height: 100%;
+      margin-top: 0;
+    }
+  }
+}
+
+// カード テキスト部分
+.charm__card {
+  .card__textInner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include g.mq(lg) {
+      width: 42%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    @include g.mq(md) {
+      width: 100%;
+      padding-right: 64px;
+      padding-left: 64px;
+      margin-top: 48px;
+      margin-bottom: 48px;
+    }
+
+    @include g.mq(sm) {
+      display: none;
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+// カード header見出し
+.card__header {
+  margin-top: 32px;
+
+  @include g.mq(ml) {
+    margin-top: 0;
+  }
+}
+
+// カード footer テキスト
+.card__footer {
+  margin-top: 32px;
+
+  @include g.mq(lg) {
+    margin-top: 32px;
+  }
+
+  @include g.mq(ml) {
+    margin-top: 16px;
+  }
+
+  @include g.mq(md) {
+    margin-top: 32px;
+  }
+
+  @include g.mq(sm) {
+    display: none;
+  }
+}
+
+.card__text {
+  line-height: 2;
+  letter-spacing: 0.1em;
+  text-align: justify;
+
+  @include g.mq(ml) {
+    line-height: 1.8;
+  }
+
+  @include g.mq(md) {
+    height: 100%;
+  }
+}
+
+// .card__text {
+//   br {
+//     display: block;
+
+//     @include g.mq(ml) {
+//       display: none;
+//     }
+//   }
+// }
+
+// カード image
+.card__imageInner {
+  width: 100%;
+  height: auto;
+  order: -1;
+  position: relative;
+  aspect-ratio: 331 / 209;
+  overflow: hidden;
+
+  @include g.mq(lg) {
+    width: 50%;
+    height: 100%;
+  }
+
+  @include g.mq(md) {
+    width: 100%;
+    order: -1;
+  }
+
+  @include g.mq(sm) {
+    width: 100%;
+    height: 100%;
+    order: 0;
+    min-height: 270px;
+  }
+}
+
+.card__thumbnail {
+  position: relative;
+
+  .card__image {
+    width: 331px;
+    height: 209px;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+
+    // @include g.mq(md) {
+    //   width: 100%;
+    //   height: 100%;
+    // }
+
+    @include g.mq(sm) {
+      width: 100vw;
+      height: 100%;
+      min-height: 270px;
+    }
+  }
+}
+
+// レスポンシブ smサイズ
+.sp-card__text {
+  display: none;
+
+  @include g.mq(sm) {
+    display: block;
+    font-size: g.$f12;
+    font-weight: 400;
+    text-align: left;
+  }
+}
+
+.sp-card__linkBox {
+  display: none;
+
+  @include g.mq(sm) {
+    width: 200px;
+    height: 64px;
+    display: flex;
+    flex-direction: column;
+    font-size: g.$f18;
+    font-weight: 500;
+    text-align: center;
+    color: g.$mainColor;
+    background-color: transparent;
+    border: g.$mainColor 6px double;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateY(-60%) translateX(-50%);
+    -webkit-transform: translateY(-60%) translateX(-50%);
+    z-index: 50;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+}

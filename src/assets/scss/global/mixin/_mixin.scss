@@ -1,0 +1,230 @@
+// @use "./../variables" as v;
+@use "./../config" as c;
+
+// @use "sass:math";
+
+@mixin font-base {
+  font-family: c.$font-family;
+  font-size: c.$f16;
+  font-weight: 500;
+}
+
+@mixin font-style {
+  font-size: c.$f16;
+  font-weight: bold;
+}
+
+// box shadowの定義
+@mixin box-shadow($x-axis: 0px, $y-axis: 3px, $blur: 6px, $color: rgba(0, 0, 0, 0.16)) {
+  box-shadow: $x-axis $y-axis $blur $color;
+}
+
+// borderの定義
+@mixin border-style($borderColor: c.$border_color, $borderSize: 1px, $borderType: solid) {
+  border: $borderColor $borderSize $borderType;
+}
+
+@mixin border-subStyle($borderColor: c.$border_subColor, $borderSize: 1px, $borderType: solid) {
+  border: $borderColor $borderSize $borderType;
+}
+
+// background-imageについての定義
+// ex.
+// @mixin background_image {
+//background-image: url("#{c.$image}");
+//background-image: image-set(url("#{c.$image}") 1x,
+//url("#{c.$image2x}") 2x);
+//background-image: -webkit-image-set(url("#{c.$image}") 1x,
+//url("#{c.$image2x}") 2x);
+//background-size: cover;
+//background-position: c.$position;
+//position: relative;
+//}
+
+// section "fv" background-image
+@mixin background-image {
+  background-image: url("#{c.$background_image}");
+  background-image: image-set(url("#{c.$background_image}") 1x,
+    url("#{c.$background_image2x}") 2x);
+  background-image: -webkit-image-set(url("#{c.$background_image}") 1x,
+    url("#{c.$background_image2x}") 2x);
+}
+
+@mixin background-image__second {
+  background-image: url("#{c.$background_image__second}");
+  background-image: image-set(url("#{c.$background_image__second}") 1x,
+    url("#{c.$background_image2x__second}") 2x);
+  background-image: -webkit-image-set(url("#{c.$background_image__second}") 1x,
+    url("#{c.$background_image2x__second}") 2x);
+}
+
+@mixin background-image__third {
+  background-image: url("#{c.$background_image__third}");
+  background-image: image-set(url("#{c.$background_image__third}") 1x,
+    url("#{c.$background_image2x__third}") 2x);
+  background-image: -webkit-image-set(url("#{c.$background_image__third}") 1x,
+    url("#{c.$background_image2x__third}") 2x);
+}
+
+@mixin background-image__fourth {
+  background-image: url("#{c.$background_image__fourth}");
+  background-image: image-set(url("#{c.$background_image__fourth}") 1x,
+    url("#{c.$background_image2x__fourth}") 2x);
+  background-image: -webkit-image-set(url("#{c.$background_image__fourth}") 1x,
+    url("#{c.$background_image2x__fourth}") 2x);
+}
+
+@mixin background-image__fifth {
+  background-image: url("#{c.$background_image__fifth}");
+  background-image: image-set(url("#{c.$background_image__fifth}") 1x,
+    url("#{c.$background_image2x__fifth}") 2x);
+  background-image: -webkit-image-set(url("#{c.$background_image__fifth}") 1x,
+    url("#{c.$background_image2x__fifth}") 2x);
+}
+
+@mixin bg01-background-image {
+  background-image: url("#{c.$bg01-background_image}");
+  background-image: image-set(url("#{c.$bg01-background_image}") 1x,
+    url("#{c.$bg01-background_image2x}") 2x);
+  background-image: -webkit-image-set(url("#{c.$bg01-background_image}") 1x,
+    url("#{c.$bg01-background_image2x}") 2x);
+}
+
+// section "charm" background-image
+@mixin bg02-background-image {
+  background-image: url("#{c.$bg02-background_image}");
+  background-image: image-set(url("#{c.$bg02-background_image}") 1x,
+    url("#{c.$bg02-background_image2x}") 2x);
+  background-image: -webkit-image-set(url("#{c.$bg02-background_image}") 1x,
+    url("#{c.$bg02-background_image2x}") 2x);
+}
+
+// section "access" background-image
+@mixin bg03-background-image {
+  background-image: url("#{c.$bg03-background_image}");
+  background-image: image-set(url("#{c.$bg03-background_image}") 1x,
+    url("#{c.$bg03-background_image2x}") 2x);
+  background-image: -webkit-image-set(url("#{c.$bg03-background_image}") 1x,
+    url("#{c.$bg03-background_image2x}") 2x);
+}
+
+// footer background-image
+@mixin bg04-background-image {
+  background-image: url("#{c.$bg04-background_image}");
+  background-image: image-set(url("#{c.$bg04-background_image}") 1x,
+    url("#{c.$bg04-background_image2x}") 2x);
+  background-image: -webkit-image-set(url("#{c.$bg04-background_image}") 1x,
+    url("#{c.$bg04-background_image2x}") 2x);
+}
+
+@mixin bg05-background-image {
+  background-image: url("#{c.$bg05-background_image}");
+  background-image: image-set(url("#{c.$bg05-background_image}") 1x,
+    url("#{c.$bg05-background_image2x}") 2x);
+  background-image: -webkit-image-set(url("#{c.$bg05-background_image}") 1x,
+    url("#{c.$bg05-background_image2x}") 2x);
+}
+
+@mixin bg06-background-image {
+  background-image: url("#{c.$bg06-background_image}");
+  background-image: image-set(url("#{c.$bg06-background_image}") 1x,
+    url("#{c.$bg06-background_image2x}") 2x);
+  background-image: -webkit-image-set(url("#{c.$bg06-background_image}") 1x,
+    url("#{c.$bg06-background_image2x}") 2x);
+}
+
+// 下層ページ "お知らせ" section "news-mainVisual"
+@mixin news-background-image {
+  background-image: url("#{c.$news-background_image}");
+  background-image: image-set(url("#{c.$news-background_image}") 1x,
+    url("#{c.$news-background_image2x}") 2x);
+  background-image: -webkit-image-set(url("#{c.$news-background_image}") 1x,
+    url("#{c.$news-background_image2x}") 2x);
+}
+
+// 下層ページ "花火大会" section "hanabi-mainVisual"
+@mixin hanabi-background-image {
+  background-image: url("#{c.$hanabi-background_image}");
+  background-image: image-set(url("#{c.$hanabi-background_image}") 1x,
+    url("#{c.$hanabi-background_image2x}") 2x);
+  background-image: -webkit-image-set(url("#{c.$hanabi-background_image}") 1x,
+    url("#{c.$hanabi-background_image2x}") 2x);
+}
+
+// 下層ページ "花火大会" section "hanabi" 背景
+@mixin hanabi_bg-background-image {
+  background-image: url("#{c.$hanabi_bg-background_image}");
+  background-image: image-set(url("#{c.$hanabi_bg-background_image}") 1x,
+    url("#{c.$hanabi_bg-background_image2x}") 2x);
+  background-image: -webkit-image-set(url("#{c.$hanabi_bg-background_image}") 1x,
+    url("#{c.$hanabi_bg-background_image2x}") 2x);
+}
+
+// 下層ページ "観光名所" section "kankou-mainVisual"
+@mixin kankou-background-image {
+  background-image: url("#{c.$kankou-background_image}");
+  background-image: image-set(url("#{c.$kankou-background_image}") 1x,
+    url("#{c.$kankou-background_image2x}") 2x);
+  background-image: -webkit-image-set(url("#{c.$kankou-background_image}") 1x,
+    url("#{c.$kankou-background_image2x}") 2x);
+}
+
+// 下層ページ "観光名所" section "kankou" 背景
+@mixin kankou_bg-background-image {
+  background-image: url("#{c.$kankou_bg-background_image}");
+  background-image: image-set(url("#{c.$kankou_bg-background_image}") 1x,
+    url("#{c.$kankou_bg-background_image2x}") 2x);
+  background-image: -webkit-image-set(url("#{c.$kankou_bg-background_image}") 1x,
+    url("#{c.$kankou_bg-background_image2x}") 2x);
+}
+
+// header "有料観覧席予約カレンダー" background-image
+@mixin background_calender {
+  background-image: url("#{c.$background_calender}");
+  background-image: image-set(url("#{c.$background_calender}") 1x,
+    url("#{c.$background_calender2x}") 2x);
+  background-image: -webkit-image-set(url("#{c.$background_calender}") 1x,
+    url("#{c.$background_calender2x}") 2x);
+}
+
+// スクリーンリーダーCSS ブラウザ非表示
+@mixin visually-hidden {
+  // a11y-css-resetから引用
+  // https://github.com/mike-engel/a11y-css-reset
+  width: 1px;
+  height: 1px;
+  border: 0;
+  margin: -1px;
+  padding: 0;
+  position: absolute;
+  overflow: hidden;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+}
+
+// button
+@mixin button {
+  max-width: 156px;
+  font-family: inherit;
+  font-size: c.$f14;
+  text-align: center;
+  color: c.$mainColor;
+}
+
+// writing-mode rl
+@mixin writing_mode {
+  -ms-writing-mode: vertical-rl;
+  -o-writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+  -moz-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+}
+
+@mixin writing_mode-horizontal {
+  -ms-writing-mode: lr-tb;
+  -o-writing-mode: horizontal-tb;
+  -webkit-writing-mode: horizontal-tb;
+  -moz-writing-mode: horizontal-tb;
+  writing-mode: horizontal-tb;
+}

@@ -1,0 +1,69 @@
+// background-image
+
+// section "fv" 1枚目
+$background_image: "/assets/images/fv01.jpg";
+// background-image: url("#{$background_image}");
+$background_image2x: "/assets/images/fv01@2x.jpg";
+// background-image: url("#{$background_image2x}");
+
+// section "fv" 2枚目
+$background_image__second: "/assets/images/fv02.jpg";
+$background_image2x__second: "/assets/images/fv02@2x.jpg";
+// section "fv" 3枚目
+$background_image__third: "/assets/images/fv03.jpg";
+$background_image2x__third: "/assets/images/fv03@2x.jpg";
+// section "fv" 4枚目
+$background_image__fourth: "/assets/images/fv04.jpg";
+$background_image2x__fourth: "/assets/images/fv04@2x.jpg";
+// section "fv" 5枚目
+$background_image__fifth: "/assets/images/fv05.jpg";
+$background_image2x__fifth: "/assets/images/fv05@2x.jpg";
+
+// section "about" 背景
+$bg01-background_image: "/assets/images/bg01.jpg";
+$bg01-background_image2x: "/assets/images/bg01@2x.jpg";
+
+// section "charm" 背景
+$bg02-background_image: "/assets/images/bg02.jpg";
+$bg02-background_image2x: "/assets/images/bg02@2x.jpg";
+
+// section "access" 背景
+$bg03-background_image: "/assets/images/bg03.jpg";
+$bg03-background_image2x: "/assets/images/bg03@2x.jpg";
+
+// footer 背景画像
+$bg04-background_image: "/assets/images/bg04.png";
+$bg04-background_image2x: "/assets/images/bg04@2x.png";
+
+// レスポンシブsmサイズ section "table" 背景
+$bg05-background_image: "/assets/images/bg05.jpg";
+$bg05-background_image2x: "/assets/images/bg05@2x.jpg";
+
+// レスポンシブsmサイズ ハンバーガーメニュー 背景
+$bg06-background_image: "/assets/images/bg06.jpg";
+$bg06-background_image2x: "/assets/images/bg06@2x.jpg";
+
+// 下層ページ "お知らせ" section "news-fv"
+$news-background_image: "/assets/images/news_fv.jpg";
+$news-background_image2x: "/assets/images/news_fv@2x.jpg";
+
+// 下層ページ "花火大会" section "hanabi-fv"
+$hanabi-background_image: "/assets/images/hanabi_fv.jpg";
+$hanabi-background_image2x: "/assets/images/hanabi_fv@2x.jpg";
+
+// 下層ページ "花火大会" section "hanabi" 背景
+$hanabi_bg-background_image: "/assets/images/hanabi_bg.jpg";
+$hanabi_bg-background_image2x: "/assets/images/hanabi_bg@2x.jpg";
+
+// 下層ページ "観光名所" section "kankou-fv"
+$kankou-background_image: "/assets/images/kankou_fv.jpg";
+$kankou-background_image2x: "/assets/images/kankou_fv@2x.jpg";
+
+// 下層ページ "観光名所" section "kankou" 背景
+$kankou_bg-background_image: "/assets/images/kankou_bg.jpg";
+$kankou_bg-background_image2x: "/assets/images/kankou_bg@2x.jpg";
+
+
+// header 宿泊予約ボタン カレンダーアイコン
+$background_calender: "/assets/images/calender.png";
+$background_calender2x: "/assets/images/calender@2x.png";

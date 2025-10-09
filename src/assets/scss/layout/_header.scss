@@ -1,0 +1,219 @@
+@use "../global" as g;
+
+// header
+
+.header {
+  width: 100%;
+  height: 80px;
+  display: block;
+  color: g.$mainColor;
+  background-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  @include g.mq(md) {
+    height: 180px;
+  }
+
+  @include g.mq(sm) {
+    width: 100vw;
+    height: 160px;
+    top: auto;
+    bottom: 0;
+  }
+}
+
+.header__wrapper {
+  $size: 1780px;
+  width: 100%;
+  max-width: $size;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 16px;
+  padding-left: 16px;
+
+  @include g.mq(xx) {
+    $size: 1480px;
+    max-width: $size;
+  }
+
+  @include g.mq(xl) {
+    $size: 1280px;
+    max-width: $size;
+  }
+
+  @include g.mq(lg) {
+    $size: 1024px;
+    max-width: $size;
+  }
+
+  @include g.mq(mx) {
+    $size: 950px;
+    max-width: $size;
+  }
+
+  @include g.mq(ml) {
+    $size: 829px;
+    max-width: $size;
+  }
+
+  @include g.mq(mm) {
+    $size: 769px;
+    max-width: $size;
+  }
+
+  @include g.mq(md) {
+    $size: 640px;
+    max-width: $size;
+  }
+
+  @include g.mq(ms) {
+    $size: 550px;
+    max-width: $size;
+  }
+
+  @include g.mq(sl) {
+    $size: 480px;
+    max-width: $size;
+  }
+
+  @include g.mq(sm) {
+    $size: 350px;
+    max-width: $size;
+  }
+
+  @include g.mq(ss) {
+    $size: 320px;
+    max-width: $size;
+  }
+}
+
+.header__inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  @include g.mq(mm) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+#js-header__logo {
+  position: fixed;
+  top: 16px;
+  left: 75px;
+
+  @include g.mq(xl) {
+    top: 16px;
+    left: 120px;
+  }
+
+  @include g.mq(ml) {
+    top: 16px;
+    left: 8%;
+  }
+
+  @include g.mq(mm) {
+    top: 16px;
+    left: 38%;
+  }
+
+  @include g.mq(md) {
+    top: 16px;
+    left: 38%;
+  }
+
+  @include g.mq(sl) {
+    top: 16px;
+    left: 32%;
+  }
+
+  @include g.mq(sm) {
+    position: sticky;
+    top: 16px;
+    left: 176px;
+  }
+
+  @include g.mq(ss) {
+    position: sticky;
+    top: 16px;
+    left: 176px;
+  }
+}
+
+#js-header__logo {
+  .logo__image {
+    position: absolute;
+    top: 7px;
+    left: -42px;
+    opacity: 1;
+    -webkit-transition: .2s;
+    transition: .2s;
+
+    @include g.mq(xl) {
+      top: 5px;
+      left: -42px;
+    }
+
+    @include g.mq(ml) {
+      top: 7px;
+      left: -42px;
+    }
+
+    @include g.mq(md) {
+      top: 5px;
+      left: -42px;
+    }
+
+    @include g.mq(sm) {
+      top: -6px;
+      left: -38px;
+    }
+
+    @include g.mq(ss) {
+      top: -4px;
+      left: -36px;
+    }
+  }
+}
+
+// intersectionObserver add('is_changed')
+#js-header.is_changed {
+  color: g.$textColor;
+  background-color: g.$mainColor;
+}
+
+// intersectionObserver add('is_scrolled')
+#js-header__logo.is_scrolled .logo__image_first {
+  opacity: 0;
+}
+
+// intersectionObserver add('is_stayed')
+#js-header__logo.is_stayed .logo__image_second {
+  opacity: 0;
+}
+
+.logo__image_second {
+  position: absolute;
+  top: 22px;
+  left: 107px;
+}
+
+// モーダル
+.modal {
+  display: none;
+}
+
+.modal.is-open {
+  display: block;
+}

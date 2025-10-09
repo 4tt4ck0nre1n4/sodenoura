@@ -1,0 +1,490 @@
+@use "../global" as g;
+
+// ハンバーガーメニュー
+
+// ボタン
+.c-button__hamburger {
+  display: none;
+
+  @include g.mq(sm) {
+    display: inline-block;
+    border: none;
+    position: relative;
+    text-decoration: none;
+  }
+}
+
+.hamburger {
+  display: none;
+
+  @include g.mq(sm) {
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: g.$textColor;
+    background: transparent;
+    margin: auto;
+    position: absolute;
+    top: -6px;
+    right: 20px;
+    z-index: 50;
+    -webkit-transition: ease .5s;
+    transition: ease .5s;
+  }
+
+  @include g.mq(ss) {
+    top: -6px;
+    right: 6px;
+  }
+}
+
+// <span> 三本線
+.hamburger__line {
+  display: none;
+
+  @include g.mq(sm) {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: g.$textColor;
+    position: absolute;
+    top: 20px;
+    right: 18px;
+    bottom: 0;
+    -webkit-transition: inherit;
+    transition: inherit;
+  }
+}
+
+.hamburger__line::before,
+.hamburger__line::after {
+  display: none;
+
+  @include g.mq(sm) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: inherit;
+    position: absolute;
+    -webkit-transition: inherit;
+    transition: inherit;
+  }
+}
+
+.hamburger__line::before {
+  @include g.mq(sm) {
+    top: -6px;
+  }
+}
+
+.hamburger__line::after {
+  @include g.mq(sm) {
+    top: 6px;
+  }
+}
+
+// ハンバーガーメニュー 表示状態
+.c-button__hamburger[aria-expanded="true"] .hamburger__line {
+  @include g.mq(sm) {
+    background: transparent;
+  }
+}
+
+.c-button__hamburger[aria-expanded="true"] .hamburger__line::before,
+.c-button__hamburger[aria-expanded="true"] .hamburger__line::after {
+  @include g.mq(sm) {
+    background: g.$textColor;
+  }
+}
+
+.c-button__hamburger[aria-expanded="true"] .hamburger__line::before {
+  @include g.mq(sm) {
+    top: 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+
+.c-button__hamburger[aria-expanded="true"] .hamburger__line::after {
+  @include g.mq(sm) {
+    top: 0;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+}
+
+// ハンバーガーメニュー 文字（メニュー, 閉じる）
+.hamburger__text {
+  @include g.mq(sm) {
+    width: 75%;
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
+
+.c-button__hamburger[aria-expanded="false"] .hamburger__text::before,
+.c-button__hamburger[aria-expanded="true"] .hamburger__text::before {
+  @include g.mq(sm) {
+    font-size: g.$f10;
+    font-weight: 500;
+    text-align: center;
+    color: g.$textColor;
+  }
+}
+
+.c-button__hamburger[aria-expanded="false"] .hamburger__text::before {
+  @include g.mq(sm) {
+    content: "メニュー";
+  }
+}
+
+.c-button__hamburger[aria-expanded="true"] .hamburger__text::before {
+  @include g.mq(sm) {
+    content: "閉じる";
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+  }
+}
+
+
+#js-hamburger__line {
+  @include g.mq(sm) {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: g.$mainColor;
+    position: absolute;
+    top: 20px;
+    right: 18px;
+    bottom: 0;
+    -webkit-transition: inherit;
+    transition: inherit;
+  }
+}
+
+#js-hamburger__line.change_color {
+  @include g.mq(sm) {
+    background: g.$textColor;
+  }
+}
+
+#js-hamburger__line::before,
+#js-hamburger__line::after {
+  @include g.mq(sm) {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    position: absolute;
+    -webkit-transition: inherit;
+    transition: inherit;
+  }
+}
+
+#js-hamburger__line::before {
+  @include g.mq(sm) {
+    top: -6px;
+  }
+}
+
+#js-hamburger__line::after {
+  @include g.mq(sm) {
+    top: 6px;
+  }
+}
+
+// ハンバーガーメニュー 表示状態
+.c-button__hamburger[aria-expanded="true"] #js-hamburger__line {
+  @include g.mq(sm) {
+    // 真ん中の線を消す
+    background: transparent;
+  }
+}
+
+.c-button__hamburger[aria-expanded="true"] #js-hamburger__line::before,
+.c-button__hamburger[aria-expanded="true"] #js-hamburger__line::after {
+  @include g.mq(sm) {
+    background: g.$textColor;
+  }
+}
+
+.c-button__hamburger[aria-expanded="true"] #js-hamburger__line::before {
+  @include g.mq(sm) {
+    top: 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+
+.c-button__hamburger[aria-expanded="true"] #js-hamburger__line::after {
+  @include g.mq(sm) {
+    top: 0;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+}
+
+// ハンバーガーメニュー 文字（メニュー, 閉じる）
+#js-hamburger__text {
+  @include g.mq(sm) {
+    width: 75%;
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    color: g.$mainColor;
+  }
+}
+
+#js-hamburger__text.change_color {
+  @include g.mq(sm) {
+    color: g.$textColor;
+  }
+}
+
+.c-button__hamburger[aria-expanded="false"] #js-hamburger__text::before {
+  @include g.mq(sm) {
+    font-size: g.$f10;
+    font-weight: 500;
+    text-align: center;
+    color: inherit;
+  }
+}
+
+.c-button__hamburger[aria-expanded="true"] #js-hamburger__text::before {
+  @include g.mq(sm) {
+    font-size: g.$f10;
+    font-weight: 500;
+    text-align: center;
+  }
+}
+
+.c-button__hamburger[aria-expanded="false"] #js-hamburger__text::before {
+  @include g.mq(sm) {
+    content: "メニュー";
+  }
+}
+
+.c-button__hamburger[aria-expanded="false"] #js-hamburger__text::before.change_color {
+  @include g.mq(sm) {
+    content: "メニュー";
+  }
+}
+
+.c-button__hamburger[aria-expanded="true"] #js-hamburger__text::before {
+  @include g.mq(sm) {
+    content: "閉じる";
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    color: g.$textColor;
+  }
+}
+
+// ハンバーガーメニュー <nav>展開
+.header__nav[aria-hidden="true"],
+.header__nav[aria-hidden="false"] {
+  position: static;
+
+  @include g.mq(sm) {
+    width: 75%;
+    height: 100vh;
+    color: g.$textColor;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.header__nav[aria-hidden="true"] {
+  @include g.mq(sm) {
+    -webkit-transform: translateY(1500%);
+    transform: translateY(1500%);
+    -webkit-transition: ease .5s;
+    transition: ease .5s;
+  }
+}
+
+.header__nav[aria-hidden="false"] {
+  @include g.mq(sm) {
+    @include g.bg06-background_image;
+    background-position: 20%;
+    background-size: cover;
+    background-repeat: repeat;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: ease 0.5s;
+    transition: ease 0.5s;
+  }
+}
+
+.header__nav[aria-hidden="false"].header__menu_link:hover {
+  @include g.mq(sm) {
+    text-decoration: underline;
+  }
+}
+
+body.js-fixed {
+  @include g.mq(sm) {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+  }
+}
+
+.overlay {
+  @include g.mq(sm) {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
+    visibility: hidden;
+    cursor: pointer;
+  }
+}
+
+.nav_open.overlay {
+  @include g.mq(sm) {
+    opacity: 0.8;
+    visibility: visible;
+  }
+}
+
+// nav
+.header__nav {
+  padding-left: 48px;
+  margin-left: 360px;
+
+  @include g.mq(xl) {
+    margin-left: 320px;
+  }
+
+  @include g.mq(lg) {
+    margin-left: 320px;
+  }
+
+  @include g.mq(ml) {
+    padding-left: 0;
+  }
+
+  @include g.mq(mm) {
+    padding-left: 0;
+    margin-left: 0;
+  }
+}
+
+.header__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: static;
+
+  @include g.mq(ml) {
+    width: 100%;
+    height: 100%;
+    font-size: g.$f14;
+    margin-top: 8px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include g.mq(mm) {
+    width: 100%;
+    height: 100%;
+    font-size: g.$f14;
+    margin-top: 64px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include g.mq(sm) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    z-index: 200;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .header__menu_item {
+    margin-top: -4px;
+
+    @include g.mq(sm) {
+      padding: 8px;
+      margin-bottom: 24px;
+    }
+  }
+
+  .header__menu_item:nth-child(even) {
+    margin-right: 32px;
+    margin-left: 32px;
+
+    @include g.mq(xl) {
+      margin-right: 24px;
+      margin-left: 24px;
+    }
+
+    @include g.mq(sm) {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+
+  .header__menu_item:last-child {
+    @include g.mq(sm) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.header__menu {
+  .header__menu_item {
+    .header__menu_link {
+      margin-top: -4px;
+
+      @include g.mq(sm) {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.header__menu {
+  .header__menu_item {
+    .header__menu_link-sp {
+      display: none;
+
+      @include g.mq(sm) {
+        display: block;
+      }
+    }
+  }
+}

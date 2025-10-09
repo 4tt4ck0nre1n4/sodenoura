@@ -1,0 +1,813 @@
+@use "../global" as g;
+
+// タイトル
+
+// header ロゴ
+.logo__title {
+  font-family: g.$f-f1;
+  font-size: g.$f32;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  white-space: nowrap;
+
+  @include g.mq(md) {
+    font-size: g.$f28;
+    letter-spacing: 0.12em;
+  }
+
+  @include g.mq(sm) {
+    font-size: g.$f20;
+  }
+}
+
+#js-header__logo {
+  @include g.mq(sm) {
+
+    .logo__title {
+      @include g.mq(sm) {
+        margin-bottom: 16px;
+        margin-left: 12px;
+      }
+
+      @include g.mq(ss) {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+// section "fv" タイトル
+.fv__title {
+  font-family: g.$f-f1;
+  font-size: g.$f32;
+  font-weight: 700;
+  line-height: 1.45;
+  color: g.$mainColor;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+  @include g.mq(lg) {
+    font-size: g.$f28;
+  }
+
+  @include g.mq(sm) {
+    font-size: g.$f24;
+  }
+}
+
+// 令和五年
+.fv__heading {
+  @include g.writing_mode;
+  line-height: 1.2;
+  letter-spacing: 0.22em;
+  white-space: nowrap;
+  position: absolute;
+  top: 360px;
+  right: 504px;
+  z-index: 50;
+
+  @include g.mq(xx) {
+    top: 15%;
+    right: 19%;
+  }
+
+  @include g.mq(xl) {
+    top: 15%;
+    right: 18%;
+  }
+
+  @include g.mq(lg) {
+    top: 18%;
+    right: 14%;
+  }
+
+  @include g.mq(ml) {
+    font-size: g.$f24;
+    top: 24%;
+    right: 8%;
+  }
+
+  @include g.mq(mm) {
+    top: 20%;
+    right: 8%;
+  }
+
+  @include g.mq(md) {
+    top: 18%;
+    right: 4%;
+  }
+
+  @include g.mq(sm) {
+    top: 6%;
+    left: 34%;
+    @include g.writing_mode-horizontal;
+  }
+
+  @include g.mq(ss) {
+    top: 6%;
+    left: 34%;
+  }
+}
+
+// 袖ノ浦港夏祭り
+.fv__heading_secondary {
+  @include g.writing_mode;
+  line-height: 1.2;
+  letter-spacing: 0.22em;
+  white-space: nowrap;
+  position: absolute;
+  top: 360px;
+  right: 589px;
+  z-index: 50;
+
+  @include g.mq(xx) {
+    top: 15%;
+    right: 23%;
+  }
+
+  @include g.mq(xl) {
+    top: 15%;
+    right: 23%;
+  }
+
+  @include g.mq(lg) {
+    top: 18%;
+    right: 19%;
+  }
+
+  @include g.mq(ml) {
+    font-size: g.$f24;
+    top: 24%;
+    right: 14%;
+  }
+
+  @include g.mq(mm) {
+    top: 20%;
+    right: 14%;
+  }
+
+  @include g.mq(md) {
+    top: 18%;
+    right: 11%;
+  }
+
+  @include g.mq(sm) {
+    top: 12%;
+    left: 24%;
+    @include g.writing_mode-horizontal;
+  }
+
+  @include g.mq(ss) {
+    top: 12%;
+    left: 24%;
+  }
+}
+
+// fv 1枚目 驚きと笑顔
+.fv__text {
+  font-family: g.$f-f1;
+  font-size: g.$f32;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.22em;
+  white-space: nowrap;
+  @include g.writing_mode;
+  color: g.$mainColor;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 50;
+  top: 390px;
+  left: 700px;
+  opacity: 1;
+  animation-name: fadeOut-text;
+  animation-duration: 30s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 4.2s;
+  animation-iteration-count: infinite;
+
+  @include g.mq(xx) {
+    top: 20%;
+    left: 32%;
+  }
+
+  @include g.mq(xl) {
+    top: 20%;
+    left: 30%;
+  }
+
+  @include g.mq(lg) {
+    font-size: g.$f28;
+    top: 25%;
+    left: 26%;
+  }
+
+  @include g.mq(ml) {
+    font-size: g.$f24;
+    top: 24%;
+    left: 22%;
+  }
+
+  @include g.mq(mm) {
+    top: 25%;
+    left: 22%;
+  }
+
+  @include g.mq(md) {
+    font-size: g.$f24;
+    top: 22%;
+    left: 15%;
+  }
+
+  @include g.mq(sm) {
+    font-size: g.$f22;
+    top: 30%;
+    left: 16%;
+    @include g.writing_mode-horizontal;
+  }
+
+  @include g.mq(ss) {
+    font-size: g.$f20;
+    top: 64%;
+    left: 15%;
+    @include g.writing_mode-horizontal;
+  }
+}
+
+@keyframes fadeOut-text {
+  0% {
+    opacity: 1;
+  }
+
+  19% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+// fv 5枚目 四年ぶりに開催
+.fv__text_secondary {
+  font-family: g.$f-f1;
+  font-size: g.$f32;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.22em;
+  white-space: nowrap;
+  @include g.writing_mode;
+  color: g.$textColor;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 50;
+  top: 390px;
+  left: 900px;
+  opacity: 0;
+  animation-name: fadeInOut-text;
+  animation-duration: 30s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 22.5s;
+  animation-iteration-count: infinite;
+
+  @include g.mq(xx) {
+    top: 35%;
+    left: 50%;
+  }
+
+  @include g.mq(xl) {
+    top: 35%;
+    left: 50%;
+  }
+
+  @include g.mq(lg) {
+    font-size: g.$f28;
+    top: 35%;
+    left: 50%;
+  }
+
+  @include g.mq(ml) {
+    font-size: g.$f24;
+    top: 35%;
+    left: 50%;
+  }
+
+  @include g.mq(mm) {
+    top: 35%;
+    left: 50%;
+  }
+
+  @include g.mq(md) {
+    font-size: g.$f24;
+    top: 35%;
+    left: 50%;
+  }
+
+  @include g.mq(sm) {
+    font-size: g.$f22;
+    top: 34%;
+    left: 50%;
+    @include g.writing_mode-horizontal;
+  }
+
+  @include g.mq(sm) {
+    font-size: g.$f20;
+    top: 34%;
+    left: 42%;
+  }
+}
+
+@keyframes fadeInOut-text {
+  0% {
+    opacity: 0;
+  }
+
+  21% {
+    opacity: 1;
+  }
+
+  32% {
+    opacity: 0;
+  }
+
+  85% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+// section "about"
+.about__title {
+  font-family: g.$f-f1;
+  font-size: g.$f28;
+  font-weight: 500;
+  letter-spacing: 0.4em;
+  white-space: nowrap;
+
+  @include g.mq(xl) {
+    letter-spacing: 0.2em;
+  }
+
+  @include g.mq(lg) {
+    font-size: g.$f24;
+    letter-spacing: 0.2em;
+  }
+
+  @include g.mq(md) {
+    font-size: g.$f24;
+    letter-spacing: 0.2em;
+  }
+
+  @include g.mq(sl) {
+    font-size: g.$f22;
+    letter-spacing: 0.2em;
+  }
+
+  @include g.mq(sm) {
+    font-size: g.$f20;
+    letter-spacing: 0.1rem;
+  }
+}
+
+// 心躍る～
+.about__heading {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+
+  @include g.mq(xl) {
+    top: 1%;
+    right: 3%;
+  }
+
+  @include g.mq(lg) {
+    top: 6%;
+    right: 1%;
+    margin-right: 4px;
+  }
+
+  @include g.mq(mx) {
+    top: 1%;
+    right: 1%;
+  }
+
+  @include g.mq(ml) {
+    top: 0%;
+    right: auto;
+    left: 22%;
+  }
+
+  @include g.mq(md) {
+    top: 0%;
+    left: 6%;
+    margin-right: 0;
+  }
+
+  @include g.mq(sl) {
+    top: 0%;
+    left: 2%;
+  }
+
+  @include g.mq(sm) {
+    top: 27%;
+    left: 27%;
+  }
+
+  @include g.mq(ss) {
+    top: 24%;
+    left: 27%;
+  }
+}
+
+// 大切な思い出に～
+.about__heading_secondary {
+  position: absolute;
+  top: 15%;
+  right: 6%;
+
+  @include g.mq(xl) {
+    top: 15%;
+    right: 8%;
+  }
+
+  @include g.mq(lg) {
+    top: 15%;
+    right: 6%;
+  }
+
+  @include g.mq(ml) {
+    top: 5%;
+    right: auto;
+    left: 22%;
+  }
+
+  @include g.mq(md) {
+    top: 6%;
+    left: 6%;
+    margin-right: 0;
+  }
+
+  @include g.mq(sl) {
+    top: 6%;
+    left: 2%;
+  }
+
+  @include g.mq(sm) {
+    top: 44%;
+    left: 16%;
+  }
+
+  @include g.mq(ss) {
+    top: 44%;
+    left: 12%;
+  }
+}
+
+// section "features" 見出し
+.features__heading {
+  font-family: g.$f-f1;
+  font-size: g.$f36;
+  font-weight: 500;
+  line-height: 1.7;
+
+  @include g.mq(xl) {
+    font-size: g.$f22;
+    line-height: 1.5;
+  }
+
+  @include g.mq(sm) {
+    display: none;
+  }
+}
+
+
+// section "charm" カード見出し
+.card__heading {
+  font-size: g.$f20;
+  line-height: 1.5;
+  margin-right: 2px;
+
+  @include g.mq(lg) {
+    margin-right: 0;
+  }
+}
+
+// 下層ページ
+// お知らせ fvタイトル
+.news__title {
+  font-family: g.$f-f1;
+  font-size: g.$f34;
+  font-weight: 700;
+  color: g.$mainColor;
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  z-index: 10;
+
+  @include g.mq(ml) {
+    font-size: g.$f24;
+  }
+
+  @include g.mq(sm) {
+    top: 7%;
+    left: 16%;
+  }
+
+  @include g.mq(ss) {
+    font-size: g.$f20;
+    top: 7%;
+    left: 16%;
+  }
+}
+
+// 下層ページ
+// お知らせ  section "news, news-table, news-access" タイトル
+.news-section__titleInner {
+  text-align: center;
+
+  .news-section__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  .news-section__heading {
+    font-family: g.$f-f1;
+    font-size: g.$f36;
+    margin-top: 12px;
+
+    @include g.mq(lg) {
+      font-size: g.$f28;
+    }
+
+    @include g.mq(sm) {
+      font-size: g.$f24;
+    }
+  }
+}
+
+// 下層ページ
+// お知らせ section "news-about" タイトル
+.news-about__title {
+  @include g.mq(sm) {
+    font-family: g.$f-f1;
+    font-size: g.$f20;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    white-space: nowrap;
+  }
+}
+
+// 心躍る～
+.news-about__heading {
+  @include g.mq(sm) {
+    display: block;
+    position: absolute;
+    top: 1%;
+    left: 4%;
+  }
+}
+
+// 大切な思い出に～
+.news-about__heading_secondary {
+  @include g.mq(sm) {
+    display: block;
+    position: absolute;
+    top: 5%;
+    left: 4%;
+  }
+}
+
+// 下層ページ
+// 花火大会 fvタイトル
+.hanabi__title {
+  font-family: g.$f-f1;
+  font-size: g.$f34;
+  font-weight: 700;
+  color: g.$mainColor;
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  z-index: 10;
+
+  @include g.mq(ml) {
+    font-size: g.$f24;
+  }
+
+  @include g.mq(sm) {
+    font-size: g.$f24;
+    color: g.$textColor;
+    top: 3%;
+    left: 15%;
+  }
+
+  @include g.mq(ss) {
+    font-size: g.$f22;
+    color: g.$textColor;
+    top: 5%;
+    left: 18%;
+  }
+}
+
+// 下層ページ 花火大会
+// 花火大会 contents見出し
+.hanabi__heading {
+  font-family: g.$f-f1;
+  font-size: g.$f24;
+  font-weight: 500;
+  line-height: 1.5;
+
+  @include g.mq(xl) {
+    font-size: g.$f22;
+  }
+
+  @include g.mq(sm) {
+    font-size: g.$f20;
+    line-height: 1.4;
+  }
+}
+
+.hanabi__heading {
+  br {
+    display: none;
+
+    @include g.mq(sm) {
+      display: block;
+    }
+  }
+}
+
+// 下層ページ
+// 花火大会 section "hanabi-charm" タイトル
+.hanabi-section__titleInner {
+  @include g.mq(sm) {
+    display: block;
+    text-align: center;
+  }
+
+  .hanabi-section__title {
+    @include g.mq(sm) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      white-space: nowrap;
+    }
+  }
+
+  .hanabi-section__heading {
+    @include g.mq(sm) {
+      font-family: g.$f-f1;
+      font-size: g.$f24;
+      margin-top: 12px;
+    }
+  }
+}
+
+// 下層ページ
+//花火大会 section "hanabi-charm" カード見出し
+.hanabi-card__heading {
+  @include g.mq(sm) {
+    font-size: g.$f20;
+    line-height: 1.5;
+  }
+}
+
+.hanabi-card__headingText {
+  br {
+    @include g.mq(sm) {
+      display: block;
+    }
+  }
+}
+
+// 下層ページ 花火大会
+// レスポンシブ smサイズ fvサブタイトル
+.sp-hanabi__heading {
+  display: none;
+
+  @include g.mq(sm) {
+    display: block;
+    font-family: g.$f-f1;
+    font-size: g.$f20;
+    font-weight: 500;
+    line-height: 1.4;
+    color: g.$textColor;
+    position: absolute;
+    top: 5%;
+    left: 2%;
+    z-index: 10;
+  }
+
+  @include g.mq(ss) {
+    font-size: g.$f18;
+    top: 8%;
+    left: 4%;
+  }
+}
+
+// 下層ページ
+// 観光名所 fv タイトル
+.kankou__title {
+  font-family: g.$f-f1;
+  font-size: g.$f34;
+  font-weight: 700;
+  color: g.$mainColor;
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  z-index: 10;
+
+  @include g.mq(ml) {
+    font-size: g.$f24;
+  }
+
+  @include g.mq(sm) {
+    top: 3%;
+    left: 25%;
+  }
+
+  @include g.mq(ss) {
+    font-size: g.$f22;
+    top: 5%;
+    left: 24%;
+  }
+}
+
+// 下層ページ 観光名所 h2見出し
+.kankou__header {
+  font-family: g.$f-f1;
+  font-weight: 500;
+}
+
+// 下層ページ 観光名所 見出し
+.kankou__heading {
+  font-size: g.$f24;
+  line-height: 1.5;
+
+  @include g.mq(lg) {
+    font-size: g.$f22;
+  }
+
+  @include g.mq(sm) {
+    font-size: g.$f20;
+  }
+}
+
+// 下層ページ 観光名所 サブ見出し
+.kankou__heading_text {
+  font-size: g.$f20;
+
+  @include g.mq(sm) {
+    font-size: g.$f20;
+  }
+}
+
+// 下層ページ 観光名所
+// レスポンシブ smサイズ fvサブタイトル
+.sp-kankou__heading {
+  display: none;
+
+  @include g.mq(sm) {
+    display: block;
+    font-family: g.$f-f1;
+    font-size: g.$f20;
+    font-weight: 500;
+    line-height: 1.4;
+    color: g.$mainColor;
+    position: absolute;
+    top: 1%;
+    left: 48%;
+    z-index: 10;
+  }
+
+  @include g.mq(ss) {
+    display: block;
+    font-family: g.$f-f1;
+    font-size: g.$f18;
+    font-weight: 500;
+    line-height: 1.4;
+    color: g.$mainColor;
+    position: absolute;
+    top: 2%;
+    left: 48%;
+    z-index: 10;
+  }
+}
+
+.sp-kankou__heading {
+  br {
+    display: none;
+
+    @include g.mq(lg) {
+      display: block;
+    }
+  }
+}

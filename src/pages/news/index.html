@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+{{>head}}
+
+<body class="appear">
+  <!-- loading -->
+  {{>page-loading}}
+
+  <div id="sodenoura__wrapper">
+
+    <!-- header -->
+    {{>page-header}}
+
+    <main>
+      <!-- section "news-mainVisual" -->
+      <section id="js-fv" class="news-fv">
+        <div class="news-fv__inner">
+          <h1 class="news__title">
+            お知らせ
+          </h1>
+          <ul class="sp-news__menu">
+            <li class="sp-news__menu_item">
+              <a class="sp-news__menu_link" href="#news">最新情報</a>
+            </li>
+            <li class="sp-news__menu_item">
+              <a class="sp-news__menu_link" href="#news-table">開催概要</a>
+            </li>
+            <li class="sp-news__menu_item">
+              <a class="sp-news__menu_link" href="#news-access">交通案内</a>
+            </li>
+            <li class="sp-news__menu_item">
+              <a class="sp-news__menu_link" href="#news-about">袖ノ浦市について</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- section "news" -->
+      <section id="news" class="news">
+        <div class="news__wrapper">
+          <div class="bread-crumb">
+            <div class="bread-crumb-list" role="navigation" aria-label="パンくずリスト">
+              <ol class="crumb-list">
+                <li class="crumb-list_item">
+                  <a href="https://hibari-konaweb.com/sodenoura/">
+                    トップ
+                  </a>
+                </li>
+                <li class="crumb-list_item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="#000000" stroke-width="2" stroke-linecap="square" stroke-linejoin="round">
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
+                </li>
+                <li class="crumb-list_item">
+                  <a href="https://hibari-konaweb.com/sodenoura/news/index.html">
+                    お知らせ
+                  </a>
+                </li>
+              </ol>
+            </div><!-- /.bread-crumb-list -->
+          </div><!-- /.bread-crumb -->
+          <div class="news-section__titleInner">
+            <h2 class="news-section__title">
+              <span class="section__title_logo">
+                <a class="section__logo_link" href="/index.html" aria-label="袖ノ浦港夏祭り｜袖ノ浦市観光委員会【公式サイト】のイメージロゴ">
+                  <img class="section__logo_image" src="../../assets/images/logo02.png" srcset="../../assets/images/logo02.png 1x, ../../assets/images/logo02@2x.png 2x"
+                    width="40" height="40" alt="" decoding="async">
+                </a>
+              </span>
+              <span class="news-section__heading">最新情報</span>
+            </h2>
+          </div><!-- /.ly_news-section__title -->
+
+          <!-- タブメニュー -->
+          {{>tabMenu}}
+
+        </div><!-- /.ly_news__wrapper -->
+      </section>
+
+      <!-- section "news-table" 開催概要 -->
+      {{>news-table}}
+
+      <!-- section "news-access" 交通案内-->
+      <section id="news-access" class="news-access">
+        <div class="news-access__wrapper">
+          <div class="news-section__titleInner">
+            <h2 class="news-section__title">
+              <span class="news-section__title_logo">
+                <a class="news-section__logo_link" href="/index.html" aria-label="袖ノ浦港夏祭り｜袖ノ浦市観光委員会【公式サイト】のイメージロゴ">
+                  <img class="section__logo_image" src="../../assets/images/logo02.png" srcset="../../assets/images/logo02.png 1x, ../../assets/images/logo02@2x.png 2x"
+                    width="40" height="40" alt="" decoding="async">
+                </a>
+              </span>
+              <span class="news-section__heading">
+                交通案内
+              </span>
+            </h2>
+          </div><!-- /.news-section__titleInner -->
+          <div class="news-access__inner">
+            <div class="news-access__inner_header">
+              <div class="news-access__imageInner">
+                <div class="js-aos" data-aos="fade-up" data-aos-duration="1000">
+                  <figure class="news-access__imageContents">
+                    <img class="news-access__image lazyload" src="../../assets/images/access.jpg"
+                      srcset="../../assets/images/access.jpg 1x, ../../assets/images/access@2x.jpg 2x" alt="東京湾を横断する高速道路東京湾アクアラインを上空か写した写真"
+                      width="656" height="370">
+                  </figure>
+                </div><!-- /.js-aos -->
+              </div><!-- /.news-access__imageInner -->
+              <div class="news-access__textInner">
+                <div class="js-aos" data-aos="fade-up" data-aos-duration="1500">
+                  <p class="news-access__text_exbold">
+                    車でのアクセス
+                  </p>
+                  <p class="news-access__text">
+                    首都圏中央連絡自動車道（圏央道）<br>
+                    東関東自動車道：姉ヶ崎袖ノ浦IC<br>
+                    東京湾アクアライン連絡道:袖ノ浦IC
+                  </p>
+                  <p class="news-access__text_exbold">
+                    高速バスでのアクセス
+                  </p>
+                  <p class="news-access__text">
+                    袖ノ浦バスターミナル
+                  </p>
+                  <p class="news-access__text_exbold">
+                    電車でのアクセス
+                  </p>
+                  <p class="news-access__text">
+                    JR東日本内房線：永浦駅 - 袖ノ浦駅
+                    <br>
+                    JR東日本内房線：横川駅 - 東横川駅
+                  </p>
+                  <p class="news-access__text">
+                    ＊会場特設駐車場の台数には限りがございます。混雑状況などの最新情報は当WebサイトやSNSで随時更新しております。
+                  </p>
+                </div><!-- /.js-aos -->
+              </div><!-- /.news-access_textInner -->
+            </div><!-- /.news-access__inner_header -->
+            <!-- Google Map -->
+            <div class="news-access__inner_footer">
+              <iframe class="news-access__iframe" title="袖ケ浦市のGoogle Mapの地図"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d104056.80248438909!2d139.93348681798312!3d35.41082531525143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60180aa97921ffd9%3A0x6bb1c2ddf9dc0f3!2z5Y2D6JGJ55yM6KKW44Kx5rWm5biC!5e0!3m2!1sja!2sjp!4v1690967357604!5m2!1sja!2sjp"
+                width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div><!-- /.news-access__inner_footer -->
+          </div><!-- /.news-access__inner -->
+        </div><!-- /.news-access__wrapper -->
+      </section>
+
+      <!-- section "news-about" 袖ノ浦市について-->
+      <section id="news-about" class="news-about">
+        <div class="news-about__wrapper">
+          <div class="news-about__inner">
+            <h2 class="news-about__title">
+              <span class="news-about__heading">
+                心躍るひとときが
+              </span>
+              <span class="news-about__heading_secondary">
+                大切な思い出に変わる瞬間
+              </span>
+            </h2>
+            <p class="news-about__text">
+              千葉県中西部に位置する袖ノ浦市。<br>東京湾に面した美しい海岸線と<br>自然が豊かな環境が特徴です。<br>歴史的な文化や観光名所が市内に点在し、<br>新鮮な野菜を使った料理と地元の温かい<br>雰囲気は、訪れる人々を魅了しています。
+            </p>
+            <p class="news-about__text">
+              1991年より市制を施行し、<br>2022年度時点での人口は約6万6千人。<br>この間、東京湾アクアラインや<br>東関東自動車道が開通するなど<br>飛躍的に利便性が高まった袖ノ浦市は<br>自然にも恵まれた暮らしやすい都市として、<br>住民の安定した生活を提供しています。
+            </p>
+            <p class="news-about__text">
+              待ちに待った今年の夏。<br>新型コロナウィルスの影響で中止となって<br>いた港夏祭りが、4年ぶりに開催されます。<br>地元特産の食材を使った屋台料理、<br>新たに趣向を凝らした演出で<br>力強く進化させた花火大会、<br>地域の絆を再び感じ、<br>思い出に残る素晴らしい時を過ごしましょう。<br>伝統と新たな挑戦が交差する港夏祭りが、<br>あなたを驚きと笑顔の世界へと誘います。
+            </p>
+          </div><!-- /.news-about__inner -->
+        </div><!-- /.news-about__wrapper -->
+      </section>
+    </main>
+
+    <!-- footer -->
+    {{>page-footer}}
+
+  </div>
+
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "トップ",
+          "item": "https://hibari-konaweb.com/sodenoura/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "お知らせ",
+          "item": "https://hibari-konaweb.com/sodenoura/news/"
+        }]
+      }
+  </script>
+  {{>script}}
+</body>
+
+</html>
