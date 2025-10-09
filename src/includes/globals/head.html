@@ -28,12 +28,12 @@
   <meta property="og:description" content="{{site.description}}" />
   {{/if}}
   <!-- OGP URL -->
-  <meta property="og:url" content="https://{{site.domain}}{{pagePath}}" />
+  <meta property="og:url" content="{{site.domain}}{{pagePath}}" />
   <!-- OGP image -->
   {{#if page.ogp.image}}
   <meta property="og:image" content="{{page.ogp.image}}" />
   {{else if site.ogp.image}}
-  <meta property="og:image" content="https://{{site.ogp.image}}" />
+  <meta property="og:image" content="{{site.ogp.image}}" />
   {{/if}}
   <!-- OGP site_name -->
   <meta property="og:site_name" content="{{site.name}}" />
@@ -50,7 +50,7 @@
   <meta name="twitter:site" content="{{site.twitter.username}}" />
   {{/if}}
   <!-- canonicalタグ -->
-  <link rel="canonical" href="https://{{site.domain}}{{pagePath}}" />
+  <link rel="canonical" href="{{site.domain}}{{pagePath}}" />
   <!-- favicon -->
   <link rel="icon" href="/favicon.ico" sizes="32x32" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
