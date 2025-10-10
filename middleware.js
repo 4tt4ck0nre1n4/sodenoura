@@ -1,35 +1,70 @@
-import { next } from "@vercel/edge";
-
-export const config = {
-  matcher: [
-    /*
-     * Match all request paths except for the ones starting with:
-     * - api (API routes)
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     * - assets (static assets like images, css, js)
-     */
-    "/((?!api|_next/static|_next/image|favicon.ico|assets).*)",
-  ],
-};
+import { next } from '@vercel/edge';
 
 export default function middleware(request) {
-  const authorizationHeader = request.headers.get("authorization");
+  const url = new URL(request.url);
+  const pathname = url.pathname;
 
-  if (authorizationHeader) {
-    const basicAuth = authorizationHeader.split(" ")[1];
-    const [user, password] = atob(basicAuth).toString().split(":");
+  console.log(`=== Middleware processing: ${pathname} ===`);
 
-    if (user === process.env.BASIC_AUTH_USER && password === process.env.BASIC_AUTH_PASSWORD) {
-      return next();
-    }
+  // 静的アセットは認証をスキップ
+  const isStaticAsset = pathname.startsWith('/assets/') ||
+                       pathname.endsWith('.jpg') ||
+                       pathname.endsWith('.jpeg') ||
+                       pathname.endsWith('.png') ||
+                       pathname.endsWith('.gif') ||
+                       pathname.endsWith('.svg') ||
+                       pathname.endsWith('.ico') ||
+                       pathname.endsWith('.css') ||
+                       pathname.endsWith('.js') ||
+                       pathname.endsWith('.woff') ||
+                       pathname.endsWith('.woff2') ||
+                       pathname.endsWith('.ttf') ||
+                       pathname.endsWith('.webmanifest') ||
+                       pathname.endsWith('.webp') ||
+                       pathname.endsWith('.avif') ||
+                       pathname === '/favicon.ico' ||
+                       pathname === '/favicon.svg' ||
+                       pathname === '/apple-touch-icon.png' ||
+                       pathname === '/manifest.webmanifest' ||
+                       pathname === '/_favicon.svg';
+
+  if (isStaticAsset) {
+    console.log(`✅ Skipping auth for static asset: ${pathname}`);
+    return next();
   }
 
-  return new Response("Basic Auth required", {
+  console.log(`🔒 Auth required for: ${pathname}`);
+
+  // Basic認証のチェック
+  const auth = request.headers.get('authorization');
+
+  if (!auth || !auth.startsWith('Basic ')) {
+    return new Response('Basic Auth required', {
+      status: 401,
+      headers: {
+        'WWW-Authenticate': 'Basic realm="Secure Area"',
+      },
+    });
+  }
+
+  const base64 = auth.split(' ')[1];
+  const credentials = atob(base64);
+  const [username, password] = credentials.split(':');
+
+  if (username === process.env.BASIC_AUTH_USER && password === process.env.BASIC_AUTH_PASSWORD) {
+    return next();
+  }
+
+  return new Response('Invalid credentials', {
     status: 401,
     headers: {
-      "WWW-Authenticate": "Basic realm='Secure Area'",
+      'WWW-Authenticate': 'Basic realm="Secure Area"',
     },
   });
 }
+
+export const config = {
+  matcher: [
+    '/((?!api|_next/static|_next/image|assets|favicon|manifest).*)',
+  ],
+};
