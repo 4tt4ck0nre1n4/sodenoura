@@ -53,34 +53,38 @@
 
 @mixin background-image__second {
   background-image: url("#{c.$background_image__second}");
-  background-image: image-set(url("#{c.$background_image__second}") 1x,
-    url("#{c.$background_image2x__second}") 2x);
-  background-image: -webkit-image-set(url("#{c.$background_image__second}") 1x,
-    url("#{c.$background_image2x__second}") 2x);
+  // Temporarily disabled image-set for debugging
+  // background-image: image-set(url("#{c.$background_image__second}") 1x,
+  //   url("#{c.$background_image2x__second}") 2x);
+  // background-image: -webkit-image-set(url("#{c.$background_image__second}") 1x,
+  //   url("#{c.$background_image2x__second}") 2x);
 }
 
 @mixin background-image__third {
   background-image: url("#{c.$background_image__third}");
-  background-image: image-set(url("#{c.$background_image__third}") 1x,
-    url("#{c.$background_image2x__third}") 2x);
-  background-image: -webkit-image-set(url("#{c.$background_image__third}") 1x,
-    url("#{c.$background_image2x__third}") 2x);
+  // Temporarily disabled image-set for debugging
+  // background-image: image-set(url("#{c.$background_image__third}") 1x,
+  //   url("#{c.$background_image2x__third}") 2x);
+  // background-image: -webkit-image-set(url("#{c.$background_image__third}") 1x,
+  //   url("#{c.$background_image2x__third}") 2x);
 }
 
 @mixin background-image__fourth {
   background-image: url("#{c.$background_image__fourth}");
-  background-image: image-set(url("#{c.$background_image__fourth}") 1x,
-    url("#{c.$background_image2x__fourth}") 2x);
-  background-image: -webkit-image-set(url("#{c.$background_image__fourth}") 1x,
-    url("#{c.$background_image2x__fourth}") 2x);
+  // Temporarily disabled image-set for debugging
+  // background-image: image-set(url("#{c.$background_image__fourth}") 1x,
+  //   url("#{c.$background_image2x__fourth}") 2x);
+  // background-image: -webkit-image-set(url("#{c.$background_image__fourth}") 1x,
+  //   url("#{c.$background_image2x__fourth}") 2x);
 }
 
 @mixin background-image__fifth {
   background-image: url("#{c.$background_image__fifth}");
-  background-image: image-set(url("#{c.$background_image__fifth}") 1x,
-    url("#{c.$background_image2x__fifth}") 2x);
-  background-image: -webkit-image-set(url("#{c.$background_image__fifth}") 1x,
-    url("#{c.$background_image2x__fifth}") 2x);
+  // Temporarily disabled image-set for debugging
+  // background-image: image-set(url("#{c.$background_image__fifth}") 1x,
+  //   url("#{c.$background_image2x__fifth}") 2x);
+  // background-image: -webkit-image-set(url("#{c.$background_image__fifth}") 1x,
+  //   url("#{c.$background_image2x__fifth}") 2x);
 }
 
 @mixin bg01-background-image {
