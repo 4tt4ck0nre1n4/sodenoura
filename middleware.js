@@ -5,6 +5,8 @@ export default function middleware(request) {
   const pathname = url.pathname;
 
   console.log(`=== Middleware processing: ${pathname} ===`);
+  console.log(`Full URL: ${url.toString()}`);
+  console.log(`Request method: ${request.method}`);
 
   // 静的アセットは認証をスキップ
   const isStaticAsset = pathname.startsWith('/assets/') ||
@@ -65,6 +67,6 @@ export default function middleware(request) {
 
 export const config = {
   matcher: [
-    '/((?!api|_next/static|_next/image|assets|favicon|manifest).*)',
+    '/((?!api|_next/static|_next/image|assets/|favicon|manifest|.*\\.(jpg|jpeg|png|gif|svg|ico|css|js|woff|woff2|ttf|webmanifest|webp|avif)).*)',
   ],
 };
