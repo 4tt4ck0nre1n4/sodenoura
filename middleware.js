@@ -32,6 +32,8 @@ export default function middleware(request) {
 
   if (isStaticAsset) {
     console.log(`✅ Skipping auth for static asset: ${pathname}`);
+    console.log(`Static asset check: startsWith /assets/ = ${pathname.startsWith('/assets/')}`);
+    console.log(`Static asset check: endsWith .jpg = ${pathname.endsWith('.jpg')}`);
     return next();
   }
 
@@ -67,6 +69,6 @@ export default function middleware(request) {
 
 export const config = {
   matcher: [
-    '/((?!api|_next/static|_next/image|assets/|favicon|manifest|.*\\.(?:jpg|jpeg|png|gif|svg|ico|css|js|woff|woff2|ttf|webmanifest|webp|avif)).*)',
+    '/(.*)',
   ],
 };
