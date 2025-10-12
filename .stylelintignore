@@ -1,0 +1,17 @@
+# Dependencies
+node_modules
+
+# Build outputs
+dist
+build
+.cache
+
+# Generated files
+*.min.css
+
+# Public directory
+public
+
+# Logs
+logs
+*.log
