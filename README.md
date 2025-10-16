@@ -1,7 +1,9 @@
 # Sodenoura
 
 ## 概要
-
+Basic認証設定あり
+user: hibari
+password: test_001
 このプロジェクトは、Vite + Handlebars + SCSSを使用した静的Webサイトです。
 
 ## クイックスタート
